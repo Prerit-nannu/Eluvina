@@ -1,0 +1,275 @@
+/* ===========================
+   Product Listing Styles
+   =========================== */
+
+.pl-section {
+  padding: 40px 40px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  animation: pl-fadeIn 0.35s ease;
+}
+
+@keyframes pl-fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.pl-header {
+  margin-bottom: 40px;
+}
+
+.pl-title-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pl-back-btn {
+  background: none;
+  border: 1.5px solid #c9a87c;
+  color: #c9a87c;
+  padding: 9px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pl-back-btn:hover {
+  background: #c9a87c;
+  color: #fff;
+}
+
+.pl-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.pl-count {
+  background: #f5eedc;
+  color: #b8860b;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Grid */
+.pl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.pl-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.pl-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+}
+
+/* Badge */
+.pl-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #e91e63;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+/* Image */
+.pl-img-wrapper {
+  width: 280px;
+  min-height: 100%;
+  background: linear-gradient(135deg, #fdfaf5 0%, #f0e6d3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pl-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  transition: transform 0.4s;
+}
+
+.pl-card:hover .pl-img {
+  transform: scale(1.05);
+}
+
+/* Info */
+.pl-info {
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pl-product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.pl-description {
+  font-size: 0.88rem;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Benefits */
+.pl-benefits {
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.pl-benefits li {
+  font-size: 0.85rem;
+  color: #444;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pl-check {
+  color: #2e7d32;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Pricing */
+.pl-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.pl-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.pl-mrp {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.pl-saved {
+  font-size: 0.8rem;
+  color: #2e7d32;
+  font-weight: 700;
+  background: #e8f5e9;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* Actions */
+.pl-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.pl-cart-btn {
+  flex: 1;
+  padding: 12px;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.pl-cart-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.pl-buy-btn {
+  flex: 1;
+  padding: 12px;
+  background: linear-gradient(135deg, #c9a87c 0%, #e8d4b8 50%, #c9a87c 100%);
+  border: none;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(201,168,124,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pl-buy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201,168,124,0.45);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pl-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pl-section {
+    padding: 30px 20px 60px;
+  }
+  .pl-card {
+    flex-direction: column;
+  }
+  .pl-img-wrapper {
+    width: 100%;
+    min-height: 250px;
+  }
+  .pl-badge {
+    top: 14px;
+    right: 14px;
+    left: auto;
+  }
+}

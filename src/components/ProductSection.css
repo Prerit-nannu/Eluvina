@@ -1,0 +1,343 @@
+/* Product Section Styles */
+.product-header-container {
+    width: 100%;
+    background-color: #fcfaf8;
+    border-bottom: 1px solid #eaeaea;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 90px;
+}
+
+.ph-top-bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.ph-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #c9a87c;
+}
+
+.ph-logo-main {
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.ph-logo-sub {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.ph-search-container {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+}
+
+.ph-search-input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.ph-search-input:focus {
+    border-color: #c9a87c;
+}
+
+.ph-search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ph-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.ph-action-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.ph-action-item:hover {
+    color: #c9a87c;
+}
+
+.ph-action-icon {
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.ph-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #e56a77;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ph-action-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.ph-action-text small {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.ph-action-text strong {
+    font-weight: 600;
+}
+
+.ph-sub-nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.ph-sub-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ph-sub-link:hover {
+    color: #c9a87c;
+}
+
+.ph-shop-brands {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 16px;
+    background-color: #f5eedc;
+    border-radius: 20px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* Banner Styles */
+.ph-banner-container {
+    width: 100%;
+    background: linear-gradient(135deg, #fdf9f2 0%, #f4e8d3 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 5px solid #1c3628;
+}
+
+.ph-banner-logo {
+    margin-bottom: 20px;
+}
+
+.ph-banner-logo h2 {
+    font-family: 'Playfair Display', serif;
+    color: #c09641;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.ph-banner-logo p {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #333;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.ph-banner-cursive {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.8rem;
+    color: #333;
+    transform: rotate(-3deg);
+    margin: 10px 0 15px 0;
+}
+
+.ph-banner-offer {
+    margin: 20px 0;
+    z-index: 2;
+}
+
+.ph-banner-get {
+    display: inline-block;
+    background-color: #c09641;
+    color: #fff;
+    padding: 5px 25px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    transform: skew(-10deg);
+    margin-bottom: -10px;
+}
+
+.ph-banner-discount {
+    font-size: 6rem;
+    font-weight: 900;
+    color: #1c3628;
+    line-height: 1;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.ph-banner-products-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1c3628;
+    letter-spacing: 2px;
+}
+
+.ph-banner-price {
+    display: inline-block;
+    background: linear-gradient(to right, #e8c87e, #b8860b);
+    color: #1c3628;
+    padding: 10px 40px;
+    border-radius: 30px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.ph-banner-tagline {
+    color: #555;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.ph-banner-tagline::before,
+.ph-banner-tagline::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background-color: #c09641;
+}
+.ph-banner-tagline::before { left: -60px; }
+.ph-banner-tagline::after { right: -60px; }
+
+.ph-banner-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    margin-bottom: 25px;
+}
+
+.ph-banner-image {
+    max-height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.ph-banner-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 900px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.ph-banner-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ph-banner-feature-icon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #1c3628;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #1c3628;
+}
+
+.ph-banner-feature span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.ph-banner-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1c3628;
+    color: #c09641;
+    padding: 10px 0;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
