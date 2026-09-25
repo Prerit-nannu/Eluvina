@@ -1,6 +1,7 @@
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import TawkTo from '@/components/TawkTo';
 
 export const metadata = {
   metadataBase: new URL('https://aesthetics.eluvina.com'),
@@ -79,6 +80,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <TawkTo />
       </body>
     </html>
   );
