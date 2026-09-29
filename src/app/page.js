@@ -54,8 +54,8 @@ export default function HomePage() {
               <span className="stat-label">Happy Patients</span>
             </div>
             <div className="stat">
-              <span className="stat-number">98%</span>
-              <span className="stat-label">Hair Graft Survival</span>
+              <span className="stat-number">700+</span>
+              <span className="stat-label">Hair Transplant Surgeries</span>
             </div>
           </div>
         </div>
