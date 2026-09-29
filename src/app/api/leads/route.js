@@ -17,6 +17,7 @@ function clean(val) {
 }
 
 export async function POST(req) {
+  console.log('[/api/leads] Received new POST request');
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
   if (isRateLimited(ip)) return NextResponse.json({ error: 'Too many requests.' }, { status: 429 });
 
@@ -39,7 +40,10 @@ export async function POST(req) {
   else if (!/^[\d\s+\-()]{7,15}$/.test(phone)) errors.push('Enter a valid mobile number.');
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Enter a valid email.');
   if (age !== null && (isNaN(age) || age < 10 || age > 100)) errors.push('Age must be 10–100.');
-  if (errors.length) return NextResponse.json({ errors }, { status: 422 });
+  if (errors.length) {
+    console.warn('[/api/leads] Validation failed:', errors);
+    return NextResponse.json({ errors }, { status: 422 });
+  }
 
   try {
     const client = await clientPromise;
@@ -54,6 +58,7 @@ export async function POST(req) {
     });
 
     if (dup) {
+      console.log(`[/api/leads] Duplicate lead detected for phone: ${phone}`);
       return NextResponse.json({ error: 'A request with this number was already submitted. Our team will contact you shortly.' }, { status: 409 });
     }
 
@@ -78,6 +83,7 @@ export async function POST(req) {
     };
 
     const result = await leadsCollection.insertOne(leadDoc);
+    console.log(`[/api/leads] Successfully inserted new lead into MongoDB with ID: ${result.insertedId}`);
 
     // Send Email via Nodemailer
     if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
@@ -110,6 +116,7 @@ export async function POST(req) {
         };
 
         await transporter.sendMail(mailOptions);
+        console.log(`[/api/leads] Email notification sent successfully to ${process.env.GMAIL_USER}`);
       } catch (emailErr) {
         console.error('Failed to send email notification:', emailErr);
         // We do not throw here so the lead is still successfully captured for the user
