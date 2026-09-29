@@ -13,7 +13,7 @@ export default function HomePage() {
   const featuredTreatments = treatmentsData.slice(0, 6);
 
   const clinicImages = [
-    { title: 'Aesthetic Procedure Room', src: '/images/clinic/treatment_room.png' },
+    { title: 'Clinic Reception', src: '/images/clinic/reception.png' },
     { title: 'Doctor Consultation Room', src: '/images/clinic/consultation.jpeg' },
     { title: 'Safegate Medical Centre', src: '/images/clinic/hospital Image.png' },
     { title: 'Hair Transplant OT', src: '/images/clinic/Hospital OT.jpeg' },
