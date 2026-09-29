@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { sql } from '@vercel/postgres';
+import clientPromise from '@/lib/mongodb';
 
 /* Simple in-memory rate limiter: max 5 requests per IP per minute */
 const rateLimit = new Map();
@@ -42,30 +42,81 @@ export async function POST(req) {
   if (errors.length) return NextResponse.json({ errors }, { status: 422 });
 
   try {
-    /* Create table if not exists */
-    await sql`CREATE TABLE IF NOT EXISTS leads (
-      id SERIAL PRIMARY KEY, name TEXT NOT NULL, phone TEXT NOT NULL,
-      email TEXT, age INTEGER, hair_concern TEXT, coupon_code TEXT, query TEXT,
-      gclid TEXT, gbraid TEXT, wbraid TEXT,
-      utm_source TEXT, utm_medium TEXT, utm_campaign TEXT, utm_term TEXT, utm_content TEXT,
-      status TEXT NOT NULL DEFAULT 'new',
-      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    )`;
+    const client = await clientPromise;
+    const db = client.db('eluvina_aesthetics');
+    const leadsCollection = db.collection('leads');
 
-    /* Duplicate check — same phone in last 24 hours */
-    const dup = await sql`SELECT 1 FROM leads WHERE phone=${phone} AND created_at > NOW()-INTERVAL '24 hours' LIMIT 1`;
-    if (dup.rowCount > 0) return NextResponse.json({ error: 'A request with this number was already submitted. Our team will contact you shortly.' }, { status: 409 });
+    // Duplicate check — same phone in last 24 hours
+    const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    const dup = await leadsCollection.findOne({
+      phone: phone,
+      created_at: { $gt: twentyFourHoursAgo }
+    });
 
-    /* Insert */
-    const result = await sql`INSERT INTO leads
-      (name,phone,email,age,hair_concern,coupon_code,query,gclid,gbraid,wbraid,utm_source,utm_medium,utm_campaign,utm_term,utm_content)
-      VALUES (${name},${phone},${email},${age},${concern},${coupon},${query},
-        ${clean(attr.gclid) || null},${clean(attr.gbraid) || null},${clean(attr.wbraid) || null},
-        ${clean(attr.utm_source) || null},${clean(attr.utm_medium) || null},${clean(attr.utm_campaign) || null},
-        ${clean(attr.utm_term) || null},${clean(attr.utm_content) || null})
-      RETURNING id`;
+    if (dup) {
+      return NextResponse.json({ error: 'A request with this number was already submitted. Our team will contact you shortly.' }, { status: 409 });
+    }
 
-    return NextResponse.json({ success: true, id: result.rows[0].id }, { status: 201 });
+    const leadDoc = {
+      name,
+      phone,
+      email,
+      age,
+      hair_concern: concern,
+      coupon_code: coupon,
+      query,
+      gclid: clean(attr.gclid) || null,
+      gbraid: clean(attr.gbraid) || null,
+      wbraid: clean(attr.wbraid) || null,
+      utm_source: clean(attr.utm_source) || null,
+      utm_medium: clean(attr.utm_medium) || null,
+      utm_campaign: clean(attr.utm_campaign) || null,
+      utm_term: clean(attr.utm_term) || null,
+      utm_content: clean(attr.utm_content) || null,
+      status: 'new',
+      created_at: new Date()
+    };
+
+    const result = await leadsCollection.insertOne(leadDoc);
+
+    // Send Email via Nodemailer
+    if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
+      try {
+        const nodemailer = require('nodemailer');
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_APP_PASSWORD
+          }
+        });
+
+        const mailOptions = {
+          from: `"Eluvina Website" <${process.env.GMAIL_USER}>`,
+          to: process.env.GMAIL_USER, // Send to yourself (or specify another address)
+          subject: `New Lead: ${name} - ${concern || 'General Enquiry'}`,
+          html: `
+            <h2>New Consultation Request</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Email:</strong> ${email || 'N/A'}</p>
+            <p><strong>Age:</strong> ${age || 'N/A'}</p>
+            <p><strong>Interest:</strong> ${concern || 'N/A'}</p>
+            <p><strong>Message:</strong> ${query || 'N/A'}</p>
+            <p><strong>Coupon Code:</strong> ${coupon || 'N/A'}</p>
+            <hr />
+            <p><small>UTM Source: ${attr.utm_source || 'N/A'} | Medium: ${attr.utm_medium || 'N/A'} | Campaign: ${attr.utm_campaign || 'N/A'}</small></p>
+          `
+        };
+
+        await transporter.sendMail(mailOptions);
+      } catch (emailErr) {
+        console.error('Failed to send email notification:', emailErr);
+        // We do not throw here so the lead is still successfully captured for the user
+      }
+    }
+
+    return NextResponse.json({ success: true, id: result.insertedId }, { status: 201 });
   } catch (err) {
     console.error('[/api/leads]', err);
     return NextResponse.json({ error: 'Something went wrong. Please try again or call us.' }, { status: 500 });

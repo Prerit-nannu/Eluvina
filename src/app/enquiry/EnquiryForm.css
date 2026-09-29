@@ -274,9 +274,10 @@
 }
 
 .ef-spinner {
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
   border-top-color: #fff;
   border-radius: 50%;
   animation: ef-spin 0.7s linear infinite;
@@ -312,12 +313,13 @@
   width: 78px;
   height: 78px;
   border-radius: 50%;
-  background: var(--gradient-primary);
+  background: #e8f5e9;
+  color: #4caf50;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.2rem;
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
   animation: ef-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
@@ -354,7 +356,7 @@
   justify-content: center;
   gap: 8px;
   padding: 13px 24px;
-  background: #25d366;
+  background: var(--gradient-primary);
   color: #fff;
   font-family: var(--font-body);
   font-weight: 700;
@@ -367,7 +369,7 @@
 
 .ef-wa-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.3);
+  box-shadow: var(--shadow-gold);
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
