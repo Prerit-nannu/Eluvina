@@ -13,9 +13,8 @@ export default function HomePage() {
   const featuredTreatments = treatmentsData.slice(0, 6);
 
   const clinicImages = [
-    { title: 'Reception', src: '/images/clinic/reception.png' },
     { title: 'Aesthetic Procedure Room', src: '/images/clinic/treatment_room.png' },
-    { title: 'Doctor Consultation Room', src: '/images/clinic/consultation.png' },
+    { title: 'Doctor Consultation Room', src: '/images/clinic/consultation.jpeg' },
     { title: 'Safegate Medical Centre', src: '/images/clinic/hospital Image.png' },
     { title: 'Hair Transplant OT', src: '/images/clinic/Hospital OT.jpeg' },
   ];
@@ -113,9 +112,9 @@ export default function HomePage() {
               alt="Hair Transplant FUE Restoration Procedure"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
-            <div style={{ position: 'absolute', top: '20px', left: '20px', background: 'var(--primary)', color: 'var(--white)', padding: '6px 16px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '700' }}>
+            {/* <div style={{ position: 'absolute', top: '20px', left: '20px', background: 'var(--primary)', color: 'var(--white)', padding: '6px 16px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '700' }}>
               TOP TRICHOLOGY PROCEDURE
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -173,18 +172,6 @@ export default function HomePage() {
         </div>
 
         <div className="testimonials-grid">
-          <div className="testimonial-card">
-            <div className="stars">★★★★★</div>
-            <p>"The FUE Hair Transplant procedure restored my hairline completely! 8 months in, the density is incredible and natural."</p>
-            <div className="testimonial-author">
-              <div className="author-avatar">R</div>
-              <div>
-                <strong>Rahul</strong>
-                <span>Delhi NCR</span>
-              </div>
-            </div>
-          </div>
-
           <div className="testimonial-card">
             <div className="stars">★★★★★</div>
             <p>"The HydraFacial treatment gave me the best skin I've ever had! The clinic environment is serene and luxury quality."</p>
