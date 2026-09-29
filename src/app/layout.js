@@ -2,6 +2,8 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TawkTo from '@/components/TawkTo';
+import { AuthProvider } from '@/context/AuthContext';
+import { CartProvider } from '@/context/CartContext';
 
 export const metadata = {
   metadataBase: new URL('https://aesthetics.eluvina.com'),
@@ -77,10 +79,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <TawkTo />
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <TawkTo />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
