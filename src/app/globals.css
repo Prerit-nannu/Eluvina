@@ -1232,8 +1232,8 @@ a {
 
 /* Footer */
 .footer {
-    background: #111111;
-    color: var(--white);
+    background: var(--gradient-hero);
+    color: #000000;
     padding: 80px 40px 0;
 }
 
@@ -1244,15 +1244,15 @@ a {
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 60px;
     padding-bottom: 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-brand .logo-text {
-    color: var(--white);
+    color: #000000;
 }
 
 .footer-brand p {
-    color: var(--gray-light);
+    color: #000000;
     margin: 20px 0 30px;
     line-height: 1.8;
 }
@@ -1265,23 +1265,25 @@ a {
 .social-link {
     width: 44px;
     height: 44px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
     transition: var(--transition-normal);
+    color: #000000;
 }
 
 .social-link:hover {
     background: var(--primary);
+    color: var(--white);
     transform: translateY(-3px);
 }
 
 .footer-links h4,
 .footer-contact h4 {
-    color: var(--white);
+    color: #000000;
     font-size: 1.1rem;
     margin-bottom: 25px;
 }
@@ -1295,7 +1297,7 @@ a {
 }
 
 .footer-links a {
-    color: var(--gray-light);
+    color: #000000;
     transition: var(--transition-fast);
 }
 
@@ -1305,7 +1307,7 @@ a {
 }
 
 .footer-contact p {
-    color: var(--gray-light);
+    color: #000000;
     margin-bottom: 14px;
     line-height: 1.7;
 }
@@ -1316,7 +1318,7 @@ a {
 }
 
 .footer-bottom p {
-    color: var(--gray);
+    color: #000000;
     font-size: 0.9rem;
 }
 

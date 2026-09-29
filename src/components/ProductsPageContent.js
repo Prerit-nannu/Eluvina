@@ -76,14 +76,7 @@ export default function ProductsPageContent() {
         </div>
       </div>
 
-      {/* Product Banner */}
-      <div className="pp-banner-wrapper">
-        <img
-          src="/images/products/banner.png"
-          alt="Eluvina Products - Festive Offer"
-          className="pp-banner-img"
-        />
-      </div>
+
 
       {/* Category Tabs: All | Hair | Skin */}
       <div className="pp-tabs-row">
