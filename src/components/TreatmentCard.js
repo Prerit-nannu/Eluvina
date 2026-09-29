@@ -1,4 +1,5 @@
 'use client';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function TreatmentCard({ treatment }) {
   const { title, description, duration, scope, icon, badge, isPremium, image } = treatment;
@@ -47,7 +48,7 @@ export default function TreatmentCard({ treatment }) {
 
         <div className="card-footer">
           <button onClick={handleBooking} className="btn-book">
-            Book via WhatsApp
+            <WhatsAppIcon /> Book via WhatsApp
           </button>
         </div>
       </div>

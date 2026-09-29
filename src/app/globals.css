@@ -6,8 +6,10 @@
 
 :root {
     /* Main Brand Colors */
-    --primary: #c9a87c;
-    --primary-dark: #b8956b;
+    --primary: #8b6b4a;
+    /* Deep Bronze */
+    --primary-dark: #6a4f35;
+    /* Dark Bronze */
     --primary-light: #f3e9dc;
     --secondary: #2d2d2d;
     --accent: #e8b4b8;
@@ -22,7 +24,7 @@
     --white: #ffffff;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #b8956b 0%, #c9a87c 60%, #b8956b 100%);
+    --gradient-primary: linear-gradient(135deg, #6a4f35 0%, #8b6b4a 60%, #6a4f35 100%);
     --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 100%);
     --gradient-hero: linear-gradient(135deg, #fdf9f4 0%, #f5e6d8 50%, #fdf9f4 100%);
@@ -70,6 +72,7 @@ body {
     color: var(--dark);
     background: var(--light);
     overflow-x: hidden;
+    font-variant-numeric: lining-nums tabular-nums;
 }
 
 /* Typography Helpers */
@@ -83,6 +86,7 @@ h6 {
     font-weight: 600;
     line-height: 1.25;
     color: var(--dark);
+    font-variant-numeric: lining-nums tabular-nums;
 }
 
 h1 {
@@ -207,12 +211,12 @@ a {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:not(.btn-nav):hover,
+.nav-links a:not(.btn-nav).active {
     color: var(--primary-dark);
 }
 
-.nav-links a::after {
+.nav-links a:not(.btn-nav)::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -225,15 +229,15 @@ a {
     border-radius: 2px;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a:not(.btn-nav):hover::after,
+.nav-links a:not(.btn-nav).active::after {
     width: 100%;
 }
 
 .btn-nav {
     padding: 14px 64px;
     background: var(--gradient-primary);
-    color: var(--white);
+    color: var(--white) !important;
     font-weight: 600;
     font-size: 1rem;
     border-radius: var(--radius-lg);
@@ -246,7 +250,8 @@ a {
 
 .btn-nav:hover {
     transform: translateY(-2px);
-    color: var(--dark) !important;
+    color: var(--white) !important;
+    box-shadow: var(--shadow-gold);
 }
 
 .mobile-toggle {
@@ -665,14 +670,14 @@ a {
 .features-strip {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    background: var(--dark);
+    background: var(--primary-dark);
     color: var(--white);
 }
 
 .feature-box {
     padding: 50px 30px;
     text-align: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
     transition: var(--transition-normal);
 }
 
@@ -681,7 +686,7 @@ a {
 }
 
 .feature-box:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .feature-box .feature-icon {
@@ -696,7 +701,7 @@ a {
 }
 
 .feature-box p {
-    color: var(--gray-light);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.95rem;
 }
 
@@ -820,7 +825,7 @@ a {
 .btn-book {
     width: 100%;
     padding: 14px 24px;
-    background: var(--dark);
+    background: var(--gradient-primary);
     color: var(--white);
     font-family: var(--font-body);
     font-weight: 600;
@@ -832,8 +837,8 @@ a {
 }
 
 .btn-book:hover {
-    background: var(--primary);
-    transform: scale(1.02);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
 }
 
 /* Category Filters */
@@ -1121,6 +1126,11 @@ a {
     box-shadow: var(--shadow-md);
 }
 
+.contact-card.whatsapp-card {
+    background: var(--primary-light);
+    border: 1px solid rgba(201, 168, 124, 0.3);
+}
+
 .contact-form .form-group {
     margin-bottom: 22px;
 }
@@ -1175,7 +1185,7 @@ a {
 /* CTA Section */
 .cta-section {
     padding: 100px 40px;
-    background: var(--dark);
+    background: var(--primary-dark);
     text-align: center;
 }
 
@@ -1189,9 +1199,17 @@ a {
     margin-bottom: 20px;
 }
 
+.cta-section h2 .highlight {
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    color: var(--primary-light);
+}
+
 .cta-section p {
     font-size: 1.15rem;
-    color: var(--gray-light);
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 40px;
 }
 
@@ -1209,7 +1227,7 @@ a {
 
 .cta-section .btn-secondary:hover {
     background: var(--white);
-    color: var(--dark);
+    color: var(--primary-dark);
 }
 
 /* Footer */

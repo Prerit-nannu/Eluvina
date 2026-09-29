@@ -1,0 +1,116 @@
+/* ============================================================
+   enquiry.css — /enquiry page layout styles
+   ============================================================ */
+
+/* Two-column layout */
+.eq-section {
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+
+.eq-layout {
+  display: grid;
+  grid-template-columns: 660px 1fr;
+  gap: 52px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Form column — sticky on desktop */
+.eq-form-col {
+  position: sticky;
+  top: 96px;
+}
+
+/* Why card */
+.eq-why-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+}
+
+.eq-why-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.eq-why-item:last-child {
+  margin-bottom: 0;
+}
+
+.eq-why-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.eq-why-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.eq-why-item p {
+  font-size: 0.84rem;
+  color: var(--gray);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Contact card */
+.eq-contact-card {
+  background: var(--primary-light);
+  border: 1px solid rgba(201,168,124,0.3);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.eq-contact-card h3 {
+  color: var(--dark);
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.eq-contact-card .btn-secondary {
+  border-color: var(--primary);
+  color: var(--dark);
+}
+
+.eq-contact-card .btn-secondary:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .eq-layout {
+    grid-template-columns: 1fr;
+    max-width: 660px;
+  }
+
+  .eq-form-col {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .eq-section {
+    padding-top: 24px;
+  }
+
+  .eq-why-card,
+  .eq-contact-card {
+    padding: 24px 20px;
+  }
+}

@@ -1,4 +1,5 @@
 import TeamMemberCard from '@/components/TeamMemberCard';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 import { teamMembers } from '@/data/teamData';
 
 export const metadata = {
@@ -31,7 +32,7 @@ export default function TeamPage() {
           <p>Schedule a 1-on-1 personal consultation to discuss your skin goals and treatment options.</p>
           <div className="cta-buttons">
             <a href="https://wa.me/919286577083" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              💬 Message Doctor on WhatsApp
+              <WhatsAppIcon /> Message Doctor on WhatsApp
             </a>
           </div>
         </div>

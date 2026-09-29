@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">📷</a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">📘</a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">🐦</a>
-            <a href="https://wa.me/919286577083?text=${whatsappMsg}`, '_blank'" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">💬</a>
+            <a href="https://wa.me/919286577083?text=${whatsappMsg}`, '_blank'" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WhatsAppIcon style={{ marginRight: 0 }} /></a>
           </div>
         </div>
 

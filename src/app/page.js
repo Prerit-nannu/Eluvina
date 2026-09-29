@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 import TreatmentCard from '@/components/TreatmentCard';
 import { treatmentsData } from '@/data/treatmentsData';
 import ClinicGallery from '@/components/ClinicGallery';
@@ -62,7 +63,7 @@ export default function HomePage() {
         {/* RIGHT — Doctor Portrait */}
         <div className="hero-visual">
           <img
-            src="/images/doctor_profile.png"
+            src="/images/doctor_profile.avif"
             alt="Dr. Prashansa Mehta"
             style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
           />
@@ -87,18 +88,18 @@ export default function HomePage() {
         <div className="ht-grid" style={{ display: 'grid', gap: '60px', alignItems: 'center' }}>
           <div>
             <span className="section-tag">Featured Hair Restoration</span>
-            <h2>The Best FUE <span className="highlight">Hair Transplant</span></h2>
+            <h2>Advanced FUE <span className="highlight">Hair Transplant</span></h2>
             <p style={{ fontSize: '1.08rem', lineHeight: '1.8', marginBottom: '20px' }}>
-              Looking for the <strong>best hair transplant</strong>? Our advanced <strong>Follicular Unit Extraction (FUE)</strong> technique delivers dense, permanent, and 100% natural hairline growth without linear scars, making us a top choice for hair restoration.
+              Looking for a <strong>premium hair transplant</strong>? Our advanced <strong>Follicular Unit Extraction (FUE)</strong> technique delivers dense, long-lasting, and natural-looking hairline growth without linear scars, making us a trusted choice for hair restoration.
             </p>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '30px' }}>
               <li style={{ fontSize: '0.98rem', fontWeight: '500' }}>✓ <strong>Painless Procedure:</strong> Performed under local anesthesia with fast 5-7 day recovery.</li>
               <li style={{ fontSize: '0.98rem', fontWeight: '500' }}>✓ <strong>Natural Angle Micro-Grafting:</strong> Implantation matches your natural hair growth direction.</li>
-              <li style={{ fontSize: '0.98rem', fontWeight: '500' }}>✓ <strong>Lifetime Growth Guarantee:</strong> Donor follicles resist DHT loss permanently.</li>
+              <li style={{ fontSize: '0.98rem', fontWeight: '500' }}>✓ <strong>Long-Lasting Results:</strong> Transplanted DHT-resistant donor follicles promote sustained hair growth.</li>
             </ul>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <a href="https://wa.me/919286577083?text=Hi!%20I%20want%20to%20consult%20about%20FUE%20Hair%20Transplant" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Book Hair Transplant Consult 💬
+                <WhatsAppIcon /> Book a Free Consultation
               </a>
               <Link href="/blog/fue-hair-transplant-restoration-guide" className="btn-secondary">
                 Read HT Guide →
@@ -216,11 +217,11 @@ export default function HomePage() {
           <h2>Ready to Transform <span className="highlight">Your Hair & Skin?</span></h2>
           <p>Book your complimentary skin assessment or hair density consultation today.</p>
           <div className="cta-buttons">
-            <a href="tel:+919286577083" className="btn-primary">
+            <a href="tel:+919286577083" className="btn-secondary">
               📞 Call: +91 92865 77083
             </a>
             <a href="https://wa.me/919286577083" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-              💬 WhatsApp Instant Booking
+              <WhatsAppIcon /> WhatsApp Instant Booking
             </a>
           </div>
         </div>

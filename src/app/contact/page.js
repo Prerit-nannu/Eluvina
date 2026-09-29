@@ -1,4 +1,5 @@
 'use client';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 import { useState } from 'react';
 import { treatmentsData } from '@/data/treatmentsData';
@@ -36,7 +37,7 @@ export default function ContactPage() {
       <section className="page-section">
         <div className="contact-container">
           {/* Booking Form */}
-          <div className="contact-card">
+          <div className="contact-card" style={{ display: 'flex', flexDirection: 'column' }}>
             <h2 style={{ marginBottom: '24px' }}>Book Appointment</h2>
             {submitted ? (
               <div style={{ padding: '30px', background: 'var(--primary-light)', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
@@ -47,7 +48,7 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="contact-form">
+              <form onSubmit={handleSubmit} className="contact-form" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <div className="form-group">
                   <label htmlFor="name">Full Name *</label>
                   <input
@@ -97,7 +98,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <label htmlFor="message">Special Requests / Questions</label>
                   <textarea
                     id="message"
@@ -105,11 +106,12 @@ export default function ContactPage() {
                     placeholder="Let us know any skin concerns or questions..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    style={{ flex: 1, resize: 'vertical' }}
                   ></textarea>
                 </div>
 
-                <button type="submit" className="btn-primary" style={{ width: '100%' }}>
-                  Request Booking via WhatsApp 💬
+                <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: 'auto' }}>
+                  <WhatsAppIcon /> Request Booking via WhatsApp
                 </button>
               </form>
             )}
@@ -153,9 +155,9 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="contact-card" style={{ background: 'var(--dark)', color: 'var(--white)' }}>
-              <h3 style={{ color: 'var(--white)', marginBottom: '12px' }}>Instant WhatsApp Consultation</h3>
-              <p style={{ color: 'var(--gray-light)', marginBottom: '20px' }}>
+            <div className="contact-card whatsapp-card">
+              <h3 style={{ marginBottom: '12px' }}>Instant WhatsApp Consultation</h3>
+              <p style={{ color: 'var(--gray)', marginBottom: '20px' }}>
                 Need a fast response regarding pricing, available slots, or treatment suitability?
               </p>
               <a
@@ -165,7 +167,7 @@ export default function ContactPage() {
                 className="btn-primary"
                 style={{ width: '100%', display: 'inline-block', textAlign: 'center' }}
               >
-                Chat Live on WhatsApp 💬
+                <WhatsAppIcon /> Chat Live on WhatsApp
               </a>
             </div>
           </div>

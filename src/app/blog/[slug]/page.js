@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/data/blogData';
 
@@ -75,7 +76,7 @@ export default function SingleBlogPost({ params }) {
           <p style={{ margin: '10px 0 20px' }}>Schedule a personal 1-on-1 consultation with our senior dermatologists & trichologists to discuss your expected results and pricing.</p>
           <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
             <a href="https://wa.me/919286577083" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Book Procedure via WhatsApp 💬
+              <WhatsAppIcon /> Book Procedure via WhatsApp
             </a>
             <Link href="/treatments" className="btn-secondary">
               View All Procedures
