@@ -13,14 +13,12 @@ const categoryImages = {
   'Sunscreen':    '/images/products/cat_sunscreen.png',
   'Serum':        '/images/products/cat_serum.png',
   'Cream':        '/images/products/cat_cream.png',
-  'Face Mask':    '/images/products/cat_face_mask.png',
   'Under Eye':    '/images/products/cat_under_eye.png',
-  'Others':       '/images/products/cat_others.png',
   // Hair
-  'Shampoo':      '/images/products/cat_shampoo.png',
+  'Shampoo':      '/images/products/cat_shampoo.avif',
   'Hair Oil':     '/images/products/cat_hair_oil.png',
   'Hair Serum':   '/images/products/cat_hair_serum.png',
-  'Minoxidil':    '/images/products/cat_minoxidil.png',
+  'Minoxidil':    '/images/products/cat_minoxidil.avif',
 };
 
 export default function ProductsPageContent() {
