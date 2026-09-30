@@ -22,7 +22,7 @@ export const productsData = [
   {
     id: "h-sh-001",
     category: "Hair",
-    subCategory: "Shampoo",
+    subCategory: "Medicated Shampoo",
     name: "ANATRIX HAIRFALL DEFENSE SHAMPOO",
     image: "/images/products/Hair_Shampoo/ANATRIX HAIRFALL DEFENSE SHAMPOO.png",
     mrp: 550,
