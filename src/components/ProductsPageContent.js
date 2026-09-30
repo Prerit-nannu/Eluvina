@@ -8,22 +8,22 @@ import './ProductsPage.css';
 // Category card images map
 const categoryImages = {
   // Skin
-  'Face Wash':    '/images/products/cat_face_wash.png',
-  'Moisturizer':  '/images/products/cat_moisturizer.png',
-  'Sunscreen':    '/images/products/cat_sunscreen.png',
-  'Serum':        '/images/products/cat_serum.png',
-  'Cream':        '/images/products/cat_cream.png',
-  'Under Eye':    '/images/products/cat_under_eye.png',
+  'Face Wash': '/images/products/cat_face_wash.png',
+  'Moisturizer': '/images/products/cat_moisturizer.png',
+  'Sunscreen': '/images/products/cat_sunscreen.png',
+  'Serum': '/images/products/cat_serum.png',
+  'Cream': '/images/products/cat_cream.png',
+  'Under Eye': '/images/products/cat_under_eye.png',
   // Hair
-  'Shampoo':      '/images/products/cat_shampoo.avif',
-  'Hair Oil':     '/images/products/cat_hair_oil.png',
-  'Hair Serum':   '/images/products/cat_hair_serum.png',
-  'Minoxidil':    '/images/products/cat_minoxidil.avif',
+  'Shampoo': '/images/products/cat_shampoo.avif',
+  'Hair Oil': '/images/products/cat_hair_oil.png',
+  'Hair Serum': '/images/products/cat_hair_serum.png',
+  'Minoxidil': '/images/products/cat_minoxidil.avif',
 };
 
 export default function ProductsPageContent() {
-  const [activeTab, setActiveTab]           = useState('All');
-  const [searchQuery, setSearchQuery]       = useState('');
+  const [activeTab, setActiveTab] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const tabs = ['All', 'Hair', 'Skin'];

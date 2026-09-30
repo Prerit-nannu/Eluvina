@@ -54,22 +54,6 @@ export const productsData = [
       "Non-sticky, lightweight formula"
     ]
   },
-  {
-    id: "h-ho-002",
-    category: "Hair",
-    subCategory: "Hair Oil",
-    name: "Onion Blackseed Hair Oil",
-    image: "/images/products/cat_hair_oil.png",
-    mrp: 749,
-    price: 549,
-    description: "Onion extract and Black Seed Oil come together to fight hair thinning, dandruff, and scalp infections while delivering deep nourishment.",
-    benefits: [
-      "Controls dandruff",
-      "Thickens thin hair",
-      "Rich in antioxidants",
-      "Suitable for all hair types"
-    ]
-  },
 
   // ─────────────────────────────────────────────
   //  HAIR — Hair Serum
@@ -110,22 +94,6 @@ export const productsData = [
       "Easy dropper application"
     ]
   },
-  {
-    id: "h-mx-002",
-    category: "Hair",
-    subCategory: "Minoxidil",
-    name: "Minoxidil 10% Extra Strength",
-    image: "/images/products/cat_minoxidil.png",
-    mrp: 1599,
-    price: 1299,
-    description: "Extra-strength Minoxidil 10% for advanced hair loss stages, formulated with Finasteride-free compound for maximum regrowth.",
-    benefits: [
-      "Extra strength formula",
-      "For advanced hair loss",
-      "Fast-absorbing solution",
-      "Doctor recommended"
-    ]
-  },
 
   // ─────────────────────────────────────────────
   //  SKIN — Face Wash
@@ -146,22 +114,6 @@ export const productsData = [
       "Dermatologist tested"
     ]
   },
-  {
-    id: "s-fw-002",
-    category: "Skin",
-    subCategory: "Face Wash",
-    name: "Salicylic Acid Acne Face Wash",
-    image: "/images/products/cat_face_wash.png",
-    mrp: 699,
-    price: 499,
-    description: "2% Salicylic Acid powered face wash that deep cleans pores, controls excess oil, and prevents acne breakouts.",
-    benefits: [
-      "2% Salicylic Acid",
-      "Unclogs and minimises pores",
-      "Controls excess sebum",
-      "Prevents breakouts"
-    ]
-  },
 
   // ─────────────────────────────────────────────
   //  SKIN — Moisturizer
@@ -180,22 +132,6 @@ export const productsData = [
       "24-hour hydration",
       "Brightens dull skin",
       "SPF 15 added protection"
-    ]
-  },
-  {
-    id: "s-mo-002",
-    category: "Skin",
-    subCategory: "Moisturizer",
-    name: "Intense Repair Night Cream",
-    image: "/images/products/cat_moisturizer.png",
-    mrp: 1299,
-    price: 999,
-    description: "A rich overnight cream with Retinol and Peptides that repairs skin damage, boosts collagen, and delivers visibly younger-looking skin by morning.",
-    benefits: [
-      "Retinol boosts cell turnover",
-      "Reduces fine lines overnight",
-      "Deep nourishment while you sleep",
-      "Clinically tested"
     ]
   },
 
@@ -291,25 +227,6 @@ export const productsData = [
     ]
   },
 
-  // ─────────────────────────────────────────────
-  //  SKIN — Face Mask
-  // ─────────────────────────────────────────────
-  {
-    id: "s-fm-001",
-    category: "Skin",
-    subCategory: "Face Mask",
-    name: "Kaolin Clay Purifying Mask",
-    image: "/images/products/cat_face_mask.png",
-    mrp: 799,
-    price: 599,
-    description: "Kaolin and Bentonite clay detox mask that draws out impurities, shrinks pores, and leaves skin deeply cleansed and smooth.",
-    benefits: [
-      "Deep pore cleansing",
-      "Absorbs excess oil",
-      "Tightens pores visibly",
-      "Vegan & cruelty-free"
-    ]
-  },
 
   // ─────────────────────────────────────────────
   //  SKIN — Under Eye
