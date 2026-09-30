@@ -25,9 +25,9 @@ export const treatmentsData = [
   },
   {
     id: 'botox',
-    title: 'Botox Anti-Aging Injections',
+    title: 'Rejuvenating Facial Therapies',
     category: 'anti-aging',
-    description: 'FDA-approved botulinum toxin injections to reduce fine lines and wrinkles. Smooth forehead lines, crow\'s feet, and frown lines effectively.',
+    description: 'FDA-cleared aesthetic treatments designed to reduce fine lines and wrinkles. Smooth forehead lines, crow\'s feet, and frown lines effectively.',
     duration: '30 min session',
     scope: 'Long-lasting',
     badge: 'Premium',
