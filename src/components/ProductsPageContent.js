@@ -15,7 +15,7 @@ const categoryImages = {
   'Cream': '/images/products/cat_cream.png',
   'Under Eye': '/images/products/cat_under_eye.png',
   // Hair
-  'Shampoo': '/images/products/cat_shampoo.avif',
+  'Medicated Shampoo': '/images/products/cat_shampoo.avif',
   'Hair Oil': '/images/products/cat_hair_oil.png',
   'Hair Serum': '/images/products/cat_hair_serum.png',
   'Minoxidil': '/images/products/cat_minoxidil.avif',
