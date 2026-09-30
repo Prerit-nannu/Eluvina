@@ -36,7 +36,7 @@ export default function Footer() {
           <h4>Popular Procedures</h4>
           <ul>
             <li><Link href="/treatments">HydraFacial Therapy</Link></li>
-            <li><Link href="/treatments">Botox & Fillers</Link></li>
+            <li><Link href="/treatments">Anti-Aging & Fillers</Link></li>
             <li><Link href="/treatments">Laser Hair Removal</Link></li>
             <li><Link href="/treatments">PRP Growth Therapy</Link></li>
             <li><Link href="/treatments">HIFU Facelift</Link></li>

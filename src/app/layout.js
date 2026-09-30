@@ -11,7 +11,7 @@ export const metadata = {
     default: 'Eluvina Aesthetics | Premium Cosmetic & Face Therapy Clinic',
     template: '%s | Eluvina Aesthetics',
   },
-  description: 'Eluvina Aesthetics offers transformative cosmetic medical treatments, facial therapy, Botox, dermal fillers, and laser care by expert dermatologists.',
+  description: 'Eluvina Aesthetics offers transformative cosmetic medical treatments, facial therapy, anti-aging treatments, dermal fillers, and laser care by expert dermatologists.',
   keywords: [
     'Eluvina Aesthetics',
     'Eluvina Aesthetic Centre',

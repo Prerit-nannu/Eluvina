@@ -6,7 +6,7 @@ import ClinicGallery from '@/components/ClinicGallery';
 
 export const metadata = {
   title: 'Eluvina Aesthetics | Premium Cosmetic, Hair Transplant & Face Therapy Centre',
-  description: 'Welcome to Eluvina Aesthetics. Experience FUE Hair Transplant, HydraFacial, Botox, and premium facial therapies by expert dermatologists & trichologists.',
+  description: 'Welcome to Eluvina Aesthetics. Experience FUE Hair Transplant, HydraFacial, Anti-Aging Treatments, and premium facial therapies by expert dermatologists & trichologists.',
 };
 
 export default function HomePage() {
@@ -186,7 +186,7 @@ export default function HomePage() {
 
           <div className="testimonial-card">
             <div className="stars">★★★★★</div>
-            <p>"Botox & Skin Renewal package was worth every rupee. Dr. Prashansa is a master at natural facial rejuvenation."</p>
+            <p>"Anti-Aging & Skin Renewal package was worth every rupee. Dr. Prashansa is a master at natural facial rejuvenation."</p>
             <div className="testimonial-author">
               <div className="author-avatar">A</div>
               <div>
