@@ -13,6 +13,7 @@
 
 import { useState, useEffect, useId } from 'react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { AGENT_TRACKING } from '@/lib/agentMappings';
 import './EnquiryForm.css';
 
 /* ─── All clinic services shown in the dropdown ─────────────────── */
@@ -174,9 +175,28 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
       /* Fire analytics — no PII */
       try {
         const payload = { event_category: 'Lead', service_selected: values.service || 'none', coupon_applied: values.coupon ? 'yes' : 'no' };
-        if (typeof window.gtag === 'function') window.gtag('event', 'lead_submitted', payload);
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'lead_submitted', payload);
+
+          // Dynamic Google Ads Conversion Tracking via Agent Mapping
+          const activeRef = sessionStorage.getItem('affiliate_ref');
+          const agentConfig = AGENT_TRACKING[activeRef] || AGENT_TRACKING['DEFAULT'];
+
+          if (agentConfig && agentConfig.tagId && agentConfig.conversionLabel) {
+            // First initialize the agent's specific tag ID (required by Google if it's different from the base layout tag)
+            window.gtag('config', agentConfig.tagId);
+
+            // Fire the specific conversion event
+            window.gtag('event', 'conversion', {
+              'send_to': `${agentConfig.tagId}/${agentConfig.conversionLabel}`
+            });
+            console.log(`[Tracking] Fired conversion for: ${agentConfig.name} (${agentConfig.tagId})`);
+          }
+        }
         if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: 'lead_submitted', ...payload });
-      } catch { }
+      } catch (err) {
+        console.error('Analytics error:', err);
+      }
 
       setSubmitted(true);
 

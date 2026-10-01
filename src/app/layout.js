@@ -4,6 +4,9 @@ import Footer from '@/components/Footer';
 import TawkTo from '@/components/TawkTo';
 import { AuthProvider } from '@/context/AuthContext';
 import { CartProvider } from '@/context/CartContext';
+import { Suspense } from 'react';
+import AffiliateTracker from '@/components/AffiliateTracker';
+import Script from 'next/script';
 
 export const metadata = {
   metadataBase: new URL('https://aesthetics.eluvina.com'),
@@ -77,8 +80,21 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google tag (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-18484537594" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18484537594');
+          `}
+        </Script>
       </head>
       <body>
+        <Suspense fallback={null}>
+          <AffiliateTracker />
+        </Suspense>
         <AuthProvider>
           <CartProvider>
             <Navbar />
