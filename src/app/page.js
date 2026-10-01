@@ -104,9 +104,6 @@ export default function HomePage() {
               <a href="https://wa.me/919286577083?text=Hi!%20I%20want%20to%20consult%20about%20FUE%20Hair%20Transplant" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 <WhatsAppIcon /> Book a Free Consultation
               </a>
-              <Link href="/blog/fue-hair-transplant-restoration-guide" className="btn-secondary">
-                Read HT Guide →
-              </Link>
             </div>
           </div>
 
