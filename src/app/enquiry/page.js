@@ -7,7 +7,7 @@
  * Standalone enquiry / lead capture page.
  *
  * URL-driven dropdown pre-selection:
- *   /enquiry?service=hair-transplant  → "Hair Transplant (FUE / FUT)"
+ *   /enquiry?service=hair-transplant  → "Hair Transplant (FUE)"
  *   /enquiry?service=botox            → "Botox Anti-Aging"
  *   /enquiry?service=hydrafacial      → "HydraFacial Therapy"
  *   /enquiry?ref=GOOGLE20             → coupon pre-filled

@@ -2,19 +2,19 @@ export const blogPosts = [
   {
     slug: 'fue-hair-transplant-restoration-guide',
     procedureId: 'hair-transplant',
-    title: 'FUE & FUT Hair Transplant: The Ultimate Hair Restoration Guide 2026',
+    title: 'FUE Hair Transplant: The Ultimate Hair Restoration Guide 2026',
     category: 'Hair & Scalp Restoration',
     date: 'August 7, 2026',
     readTime: '7 min',
     icon: '💇‍♂️',
     excerpt: 'Everything you need to know about FUE micro-grafting, hairline design, graft survival rates, and permanent hair density recovery.',
     content: `
-      <h2>Understanding FUE & FUT Hair Restoration</h2>
+      <h2>Understanding FUE Hair Restoration</h2>
       <p>Hair loss affects millions worldwide due to genetics, stress, and hormonal shifts. Modern <strong>Follicular Unit Extraction (FUE)</strong> is a revolutionary, minimally invasive hair transplantation technique where individual hair follicles are extracted from the donor area (back of scalp) and meticulously implanted into thinning or receding areas.</p>
       
       <h2>Why FUE is the Gold Standard for Hair Loss</h2>
       <ul>
-        <li><strong>No Linear Scarring:</strong> Unlike older FUT strip surgery, FUE leaves zero linear scars.</li>
+        <li><strong>No Linear Scarring:</strong> FUE leaves zero linear scars.</li>
         <li><strong>Natural Hairline Artistry:</strong> Micro-grafts are positioned matching your natural angle and growth direction.</li>
         <li><strong>Permanent Graft Survival:</strong> Transplanted follicles from the permanent donor zone resist DHT hormone hair loss forever.</li>
         <li><strong>Minimal Downtime:</strong> Quick healing within 5-7 days with maximum comfort.</li>

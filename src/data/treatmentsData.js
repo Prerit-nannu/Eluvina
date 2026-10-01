@@ -1,7 +1,7 @@
 export const treatmentsData = [
   {
     id: 'hair-transplant',
-    title: 'FUE & FUT Hair Transplant Restoration',
+    title: 'FUE Hair Transplant Restoration',
     category: 'hair',
     description: 'Advanced FUE hair restoration and micro-follicular grafting for natural hair density, hairline redesign, and permanent scalp rejuvenation by expert trichologists.',
     duration: '3-6 hours session',

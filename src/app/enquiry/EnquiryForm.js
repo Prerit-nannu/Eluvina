@@ -20,7 +20,7 @@ import './EnquiryForm.css';
 const SERVICES = [
   { value: '', label: '- Select a service / concern -', disabled: true },
   // Hair
-  { value: 'Hair Transplant (FUE / FUT)', label: '💇‍♂️  Hair Transplant (FUE / FUT)' },
+  { value: 'Hair Transplant (FUE)', label: '💇‍♂️  Hair Transplant (FUE)' },
   { value: 'PRP Hair Therapy', label: '🌸  PRP Hair Therapy' },
   { value: 'Hair Loss / Alopecia', label: '💧  Hair Loss / Alopecia' },
   { value: 'Receding Hairline', label: '↩️   Receding Hairline' },
@@ -51,8 +51,7 @@ const SERVICES = [
 
 /* ─── URL slug → dropdown value map ────────────────────────────── */
 const SLUG_MAP = {
-  'hair-transplant': 'Hair Transplant (FUE / FUT)',
-  'fue': 'Hair Transplant (FUE / FUT)',
+  'hair-transplant': 'Hair Transplant (FUE)',
   'prp': 'PRP Hair Therapy',
   'hair-loss': 'Hair Loss / Alopecia',
   'receding-hairline': 'Receding Hairline',
