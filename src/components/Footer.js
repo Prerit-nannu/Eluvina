@@ -15,7 +15,7 @@ export default function Footer() {
             Experience the art of natural beauty enhancement with cutting-edge medical technology.
           </p>
           <div className="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">📷</a>
+            <a href="https://www.instagram.com/eluvina_aesthetics/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">📷</a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">📘</a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">🐦</a>
             <a href="https://wa.me/919286577083?text=${whatsappMsg}`, '_blank'" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WhatsAppIcon style={{ marginRight: 0 }} /></a>

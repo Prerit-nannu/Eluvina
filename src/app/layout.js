@@ -10,11 +10,14 @@ import Script from 'next/script';
 
 export const metadata = {
   metadataBase: new URL('https://aesthetics.eluvina.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: 'Eluvina Aesthetics | Premium Cosmetic & Face Therapy Clinic',
     template: '%s | Eluvina Aesthetics',
   },
-  description: 'Eluvina Aesthetics offers transformative cosmetic medical treatments, facial therapy, anti-aging treatments, dermal fillers, and laser care by expert dermatologists.',
+  description: 'Transformative cosmetic treatments, FUE Hair Transplant, dermal fillers, and laser care by leading cosmetic surgeons at Eluvina Aesthetics.',
   keywords: [
     'Eluvina Aesthetics',
     'Eluvina Aesthetic Centre',
@@ -24,7 +27,7 @@ export const metadata = {
     'Cosmetic Clinic',
     'Dermatologist',
     'HydraFacial',
-    'Botox Injections',
+    'Anti-Aging',
     'Dermal Fillers',
     'Laser Hair Removal',
     'HIFU Facelift',
@@ -33,6 +36,17 @@ export const metadata = {
   ],
   authors: [{ name: 'Eluvina Aesthetics Team' }],
   creator: 'Eluvina Aesthetics',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'Eluvina Aesthetics | Premium Cosmetic & Face Therapy Clinic',
     description: 'Discover world-class facial therapies, laser treatments, and anti-aging care tailored for your natural glow at Eluvina Aesthetics.',
@@ -43,13 +57,16 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eluvina Aesthetics',
-    description: 'Transformative facial therapies and cosmetic treatments by certified dermatologists at Eluvina Aesthetics.',
+    title: 'Eluvina Aesthetics | Premium Cosmetic & Face Therapy Clinic',
+    description: 'Discover world-class facial therapies, laser treatments, and anti-aging care tailored for your natural glow.',
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#8b6b4a',
 };
 
 export default function RootLayout({ children }) {
@@ -71,6 +88,7 @@ export default function RootLayout({ children }) {
     'medicalSpecialty': ['Hair Transplant', 'Cosmetic Surgery', 'Hair PRP', 'Laser Hair Removal', 'PRP', 'Microneedling'],
     'openingHours': 'Mo-Sa 10:00-19:00',
     'priceRange': '₹₹₹',
+    'image': 'https://aesthetics.eluvina.com/images/logo.png',
   };
 
   return (

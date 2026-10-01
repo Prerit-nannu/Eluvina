@@ -5,8 +5,8 @@ import { treatmentsData } from '@/data/treatmentsData';
 import ClinicGallery from '@/components/ClinicGallery';
 
 export const metadata = {
-  title: 'Eluvina Aesthetics | Premium Cosmetic, Hair Transplant & Face Therapy Centre',
-  description: 'Welcome to Eluvina Aesthetics. Experience FUE Hair Transplant, HydraFacial, Anti-Aging Treatments, and premium facial therapies by expert dermatologists & trichologists.',
+  title: 'Eluvina Aesthetics | Hair Transplant & Cosmetic Clinic',
+  description: 'Experience premium FUE Hair Transplant, HydraFacial, and Anti-Aging therapies by leading cosmetic surgeons at Eluvina Aesthetics.',
 };
 
 export default function HomePage() {
@@ -27,7 +27,7 @@ export default function HomePage() {
         {/* LEFT — Hero Text + Doctor Description */}
         <div className="hero-content">
           <span className="section-tag">✨ Medical Grade Aesthetic &amp; Hair Clinic</span>
-          <h1>Reveal Your <span className="highlight">Natural Glow &amp; Density</span></h1>
+          <h1>Transformative <span className="highlight">Hair Transplant</span> &amp; Cosmetic Treatments</h1>
           <p>
             Experience transformative cosmetic medical treatments and FUE hair transplant restoration.
             Our expert doctors combine cutting-edge laser technology with personalized clinical care.
