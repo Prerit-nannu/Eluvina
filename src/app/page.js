@@ -15,6 +15,7 @@ export default function HomePage() {
 
   const clinicImages = [
     { title: 'Clinic Reception', src: '/images/clinic/reception.png' },
+    { title: 'Reception Waiting Area', src: '/images/reception waiting Area.png' },
     { title: 'Doctor Consultation Room', src: '/images/clinic/consultation.jpeg' },
     { title: 'Safegate Medical Centre', src: '/images/clinic/hospital Image.png' },
     { title: 'Hair Transplant OT', src: '/images/clinic/Hospital OT.jpeg' },
@@ -46,11 +47,11 @@ export default function HomePage() {
 
           <div className="hero-stats">
             <div className="stat">
-              <span className="stat-number">06+</span>
+              <span className="stat-number">5+</span>
               <span className="stat-label">Years Experience</span>
             </div>
             <div className="stat">
-              <span className="stat-number">5K+</span>
+              <span className="stat-number">3K+</span>
               <span className="stat-label">Happy Patients</span>
             </div>
             <div className="stat">
