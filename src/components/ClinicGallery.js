@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from 'react';
+import Image from 'next/image';
 
 export default function ClinicGallery({ images }) {
   const scrollRef = useRef(null);
@@ -51,10 +52,12 @@ export default function ClinicGallery({ images }) {
               border: '1px solid rgba(0,0,0,0.06)'
             }}
           >
-            <img
+            <Image
               src={img.src}
               alt={img.title}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+              fill
+              sizes="260px"
+              style={{ objectFit: 'cover', transition: 'transform 0.4s ease' }}
               className="treatment-img"
             />
             <div

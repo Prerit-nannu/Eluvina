@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import TreatmentCard from '@/components/TreatmentCard';
 import { treatmentsData } from '@/data/treatmentsData';
@@ -61,9 +62,12 @@ export default function HomePage() {
 
         {/* RIGHT — Doctor Portrait */}
         <div className="hero-visual">
-          <img
+          <Image
             src="/images/doctor_profile.avif"
             alt="Dr. Prashansa Mehta"
+            width={600}
+            height={800}
+            priority
             style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
           />
         </div>
@@ -107,10 +111,12 @@ export default function HomePage() {
           </div>
 
           <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', position: 'relative', height: '380px' }}>
-            <img
+            <Image
               src="/images/treatments/hair_transplant.png"
               alt="Hair Transplant FUE Restoration Procedure"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: 'cover' }}
             />
             {/* <div style={{ position: 'absolute', top: '20px', left: '20px', background: 'var(--primary)', color: 'var(--white)', padding: '6px 16px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '700' }}>
               TOP TRICHOLOGY PROCEDURE
