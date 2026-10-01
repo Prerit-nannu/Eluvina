@@ -121,12 +121,15 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  /* Sync when parent resolves URL params after hydration */
+  /* Sync when parent resolves URL params after hydration, and fallback to localStorage for returning visitors */
   useEffect(() => {
+    // If there is no default coupon in the URL, check if we saved one previously (with a strict null check)
+    const savedRef = typeof window !== 'undefined' ? (localStorage.getItem('affiliate_ref') || '') : '';
+
     setValues(v => ({
       ...v,
       service: defaultService || v.service,
-      coupon: defaultCoupon || v.coupon,
+      coupon: defaultCoupon || savedRef || v.coupon,
     }));
   }, [defaultService, defaultCoupon]);
 
@@ -179,7 +182,7 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
           window.gtag('event', 'lead_submitted', payload);
 
           // Dynamic Google Ads Conversion Tracking via Agent Mapping
-          const activeRef = sessionStorage.getItem('affiliate_ref');
+          const activeRef = localStorage.getItem('affiliate_ref') || '';
           const agentConfig = AGENT_TRACKING[activeRef] || AGENT_TRACKING['DEFAULT'];
 
           if (agentConfig && agentConfig.tagId && agentConfig.conversionLabel) {

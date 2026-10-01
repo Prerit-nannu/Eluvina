@@ -9,7 +9,7 @@ export default function AffiliateTracker() {
     // Check both 'ref' and 'coupon' for affiliate codes
     const ref = searchParams.get('ref') || searchParams.get('coupon');
     if (ref) {
-      sessionStorage.setItem('affiliate_ref', ref.toUpperCase());
+      localStorage.setItem('affiliate_ref', ref.toUpperCase());
     }
   }, [searchParams]);
 

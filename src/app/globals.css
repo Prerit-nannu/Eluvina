@@ -61,6 +61,15 @@
     box-sizing: border-box;
 }
 
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -73,6 +82,7 @@ body {
     background: var(--light);
     overflow-x: hidden;
     font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
 }
 
 /* Typography Helpers */
