@@ -17,7 +17,7 @@ export default function HomePage() {
     { title: 'Clinic Reception', src: '/images/clinic/reception.png' },
     { title: 'Reception Waiting Area', src: '/images/clinic/reception waiting Area.png' },
     { title: 'Doctor Consultation Room', src: '/images/clinic/consultation.jpeg' },
-    { title: 'Safegate Medical Centre', src: '/images/clinic/hospital Image.png' },
+    { title: 'Safegate Medical Centre', src: '/images/clinic/Hospital_Image.png' },
     { title: 'Hair Transplant OT', src: '/images/clinic/Hospital OT.jpeg' },
   ];
 
