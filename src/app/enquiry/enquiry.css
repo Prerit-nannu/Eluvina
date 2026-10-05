@@ -114,6 +114,8 @@
   .eq-page-header {
     background: transparent !important;
     margin-bottom: 0px !important;
+    padding-top: 90px !important;
+    padding-bottom: 0px !important;
   }
 
   .eq-page-header > * {
