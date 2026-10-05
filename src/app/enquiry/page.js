@@ -55,7 +55,7 @@ function EnquiryContent() {
   return (
     <>
       {/* ── Page header ─────────────────────────────────── */}
-      <div className="page-header">
+      <div className="page-header eq-page-header">
         <span className="section-tag">✦ No Obligation · 100% Free</span>
         <h1>{pageTitle}</h1>
         <p style={{ maxWidth: '580px', margin: '0 auto' }}>

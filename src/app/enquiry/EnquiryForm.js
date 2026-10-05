@@ -97,12 +97,7 @@ function validate(v) {
     e.phone = 'Mobile number is required.';
   else if (!/^[\d\s+\-()]{7,15}$/.test(v.phone.trim()))
     e.phone = 'Enter a valid mobile number.';
-  if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email.trim()))
-    e.email = 'Enter a valid email address.';
-  if (v.age) {
-    const n = parseInt(v.age, 10);
-    if (isNaN(n) || n < 10 || n > 100) e.age = 'Age must be 10–100.';
-  }
+
   return e;
 }
 
@@ -111,7 +106,7 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
   const uid = useId();
 
   const [values, setValues] = useState({
-    name: '', phone: '', email: '', age: '', query: '',
+    name: '', phone: '', query: '',
     service: defaultService,
     coupon: defaultCoupon,
   });
@@ -156,8 +151,6 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
         body: JSON.stringify({
           name: values.name.trim(),
           phone: values.phone.trim(),
-          email: values.email.trim() || undefined,
-          age: values.age ? parseInt(values.age, 10) : undefined,
           hairConcern: values.service || undefined,
           couponCode: values.coupon.trim().toUpperCase() || undefined,
           query: values.query.trim() || undefined,
@@ -269,19 +262,7 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
             {errors.phone && <span className="ef-field-err">⚠ {errors.phone}</span>}
           </div>
 
-          {/* Email + Age side-by-side */}
-          <div className="ef-row">
-            <div className="ef-group">
-              <label htmlFor={`${uid}-email`} className="ef-label">Email <span className="ef-opt">(optional)</span></label>
-              <input type="email" placeholder="you@email.com" autoComplete="email" inputMode="email" {...ip('email')} />
-              {errors.email && <span className="ef-field-err">⚠ {errors.email}</span>}
-            </div>
-            <div className="ef-group">
-              <label htmlFor={`${uid}-age`} className="ef-label">Age <span className="ef-opt">(optional)</span></label>
-              <input type="number" min="10" max="100" placeholder="e.g. 32" inputMode="numeric" {...ip('age')} />
-              {errors.age && <span className="ef-field-err">⚠ {errors.age}</span>}
-            </div>
-          </div>
+
 
           {/* Service dropdown — auto-selects from URL */}
           <div className="ef-group">
