@@ -58,6 +58,14 @@ export const metadata = {
     title: 'Eluvina Aesthetics | Premium Cosmetic & Face Therapy Clinic',
     description: 'Discover world-class facial therapies, laser treatments, and anti-aging care tailored for your natural glow.',
   },
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png', sizes: '192x192' }
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 export const viewport = {
