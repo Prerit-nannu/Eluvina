@@ -1,4 +1,5 @@
 import './ProductListing.css';
+import { ShoppingCart } from 'lucide-react';
 
 export default function ProductListing({ subCategory, products, onClose }) {
   const discount = (mrp, price) => Math.round(((mrp - price) / mrp) * 100);
@@ -51,7 +52,7 @@ export default function ProductListing({ subCategory, products, onClose }) {
 
               {/* Actions */}
               <div className="pl-actions">
-                <button className="pl-cart-btn">Add to Cart 🛒</button>
+                <button className="pl-cart-btn" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>Add to Cart <ShoppingCart size={16} /></button>
                 <button className="pl-buy-btn">Buy Now</button>
               </div>
             </div>

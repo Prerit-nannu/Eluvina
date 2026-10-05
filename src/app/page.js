@@ -4,6 +4,7 @@ import WhatsAppIcon from '@/components/WhatsAppIcon';
 import TreatmentCard from '@/components/TreatmentCard';
 import { treatmentsData } from '@/data/treatmentsData';
 import ClinicGallery from '@/components/ClinicGallery';
+import { Phone } from 'lucide-react';
 
 export const metadata = {
   title: 'Eluvina Aesthetics | Hair Transplant & Cosmetic Clinic',
@@ -208,8 +209,8 @@ export default function HomePage() {
           <h2>Ready to Transform <span className="highlight">Your Hair & Skin?</span></h2>
           <p>Book your complimentary skin assessment or hair density consultation today.</p>
           <div className="cta-buttons">
-            <a href="tel:+919286577083" className="btn-secondary">
-              📞 Call: +91 92865 77083
+            <a href="tel:+919286577083" className="btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <Phone size={18} /> Call: +91 92865 77083
             </a>
             <a href="https://wa.me/919286577083" target="_blank" rel="noopener noreferrer" className="btn-secondary">
               <WhatsAppIcon /> WhatsApp Instant Booking

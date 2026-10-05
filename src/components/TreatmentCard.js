@@ -1,5 +1,6 @@
 'use client';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { Clock, Sparkles } from 'lucide-react';
 
 export default function TreatmentCard({ treatment }) {
   const { title, description, duration, scope, icon, badge, isPremium, image } = treatment;
@@ -42,8 +43,8 @@ export default function TreatmentCard({ treatment }) {
         <p>{description}</p>
 
         <div className="card-features">
-          {duration && <span>⏱ {duration}</span>}
-          {scope && <span>✨ {scope}</span>}
+          {duration && <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Clock size={14} /> {duration}</span>}
+          {scope && <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Sparkles size={14} /> {scope}</span>}
         </div>
 
         <div className="card-footer">

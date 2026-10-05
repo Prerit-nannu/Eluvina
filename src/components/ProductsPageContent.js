@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ProductListing from './ProductListing';
 import { productsData, getSubCategories, getProductsBySubCategory } from '@/data/productsData';
+import { Search } from 'lucide-react';
 import './ProductsPage.css';
 
 // Category card images map
@@ -57,7 +58,7 @@ export default function ProductsPageContent() {
       {/* Search Bar */}
       <div className="pp-search-bar-row">
         <div className="pp-search-container">
-          <span className="pp-search-icon">🔍</span>
+          <span className="pp-search-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Search size={20} color="#999" /></span>
           <input
             type="text"
             className="pp-search-input"

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import TreatmentCard from '@/components/TreatmentCard';
 import { treatmentsData } from '@/data/treatmentsData';
+import { Search } from 'lucide-react';
 
 export default function TreatmentsPage() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -37,15 +38,16 @@ export default function TreatmentsPage() {
 
       <section className="page-section" style={{ paddingTop: '20px' }}>
         {/* Search Bar */}
-        <div style={{ maxWidth: '500px', margin: '0 auto 40px' }}>
+        <div style={{ maxWidth: '500px', margin: '0 auto 40px', position: 'relative' }}>
+          <Search size={20} style={{ position: 'absolute', left: '18px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(0,0,0,0.4)' }} />
           <input
             type="text"
-            placeholder="🔍 Search treatment (e.g. Hair Transplant, HydraFacial, Botox)..."
+            placeholder="Search treatment (e.g. Hair Transplant, HydraFacial, Botox)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
               width: '100%',
-              padding: '14px 22px',
+              padding: '14px 22px 14px 48px',
               borderRadius: 'var(--radius-lg)',
               border: '1px solid rgba(0,0,0,0.15)',
               fontSize: '1rem',

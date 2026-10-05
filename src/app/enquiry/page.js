@@ -20,6 +20,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, usePathname } from 'next/navigation';
 import EnquiryForm, { resolveService } from './EnquiryForm';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { Trophy, Stethoscope, IndianRupee, Lock, Phone } from 'lucide-react';
 import './enquiry.css';
 
 function EnquiryContent() {
@@ -85,10 +86,10 @@ function EnquiryContent() {
               </h2>
 
               {[
-                { icon: '🏆', title: 'Commitment to Excellence', desc: 'Experienced surgeons and expert technician staff providing quality care.' },
-                { icon: '🔬', title: 'Hospital-Grade Facility', desc: 'Certified OT at Safegate Medical Centre, Dehradun with FDA-approved equipment.' },
-                { icon: '💰', title: 'Transparent Pricing', desc: 'No hidden charges. Full cost breakdown provided during your free consultation.' },
-                { icon: '🔒', title: '100% Confidential', desc: 'Your personal and medical information stays strictly private - always.' },
+                { icon: <Trophy size={24} />, title: 'Commitment to Excellence', desc: 'Experienced surgeons and expert technician staff providing quality care.' },
+                { icon: <Stethoscope size={24} />, title: 'Hospital-Grade Facility', desc: 'Certified OT at Safegate Medical Centre, Dehradun with FDA-approved equipment.' },
+                { icon: <IndianRupee size={24} />, title: 'Transparent Pricing', desc: 'No hidden charges. Full cost breakdown provided during your free consultation.' },
+                { icon: <Lock size={24} />, title: '100% Confidential', desc: 'Your personal and medical information stays strictly private - always.' },
               ].map(item => (
                 <div key={item.title} className="eq-why-item">
                   <span className="eq-why-icon">{item.icon}</span>
@@ -104,7 +105,7 @@ function EnquiryContent() {
             <div className="eq-contact-card">
               <h3>Prefer to reach us directly?</h3>
               <a href="tel:+919286577083" className="btn-primary" style={{ width: '100%', marginBottom: '12px', justifyContent: 'center' }}>
-                📞 Call: +91 92865 77083
+                <Phone size={18} style={{ marginRight: '4px' }} /> Call: +91 92865 77083
               </a>
               <a href="https://wa.me/919286577083" target="_blank" rel="noopener noreferrer"
                 className="btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>

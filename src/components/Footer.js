@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -7,8 +8,7 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-brand">
           <Link href="/" className="logo">
-            <span className="logo-icon">✦</span>
-            <span className="logo-text">Eluvina Aesthetics</span>
+            <img src="/images/logo.avif" alt="Eluvina Logo" className="logo-img" style={{ height: '64px', width: 'auto' }} />
           </Link>
           <p>
             Your trusted destination for premium cosmetic treatments, dermatological care, and face therapy.
@@ -49,10 +49,22 @@ export default function Footer() {
 
         <div className="footer-contact">
           <h4>Contact</h4>
-          <p>📍 Safegate Medical Centre <br />83 Araghar chowk, Model Colony<br />Dalanwala, Dehradun, Uttarakhand 248001</p>
-          <p>📞 +91 92865 77083</p>
-          <p>✉️ aesthetics@eluvina.com</p>
-          <p>🕐 Mon - Sat: 10:00 AM - 7:00 PM</p>
+          <p style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
+            <MapPin size={18} style={{ flexShrink: 0, marginTop: '4px' }} />
+            <span>Safegate Medical Centre, 83 Araghar chowk<br />Model Colony, Dalanwala, Dehradun 248001</span>
+          </p>
+          <p style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+            <Phone size={18} style={{ flexShrink: 0 }} />
+            <span>+91 92865 77083</span>
+          </p>
+          <p style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+            <Mail size={18} style={{ flexShrink: 0 }} />
+            <span>aesthetics@eluvina.com</span>
+          </p>
+          <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Clock size={18} style={{ flexShrink: 0 }} />
+            <span>Mon - Sat: 10:00 AM - 7:00 PM</span>
+          </p>
         </div>
       </div>
 

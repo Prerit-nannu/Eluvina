@@ -33,7 +33,6 @@ export default function Navbar() {
       <div className="nav-container">
         <Link href="/" className="logo" onClick={() => setMobileOpen(false)}>
           <img src="/images/logo.avif" alt="Eluvina Logo" className="logo-img" style={{ height: '64px', width: 'auto' }} />
-          <span className="logo-text">Eluvina Aesthetics</span>
         </Link>
 
         <button

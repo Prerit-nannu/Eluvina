@@ -13,6 +13,7 @@
 
 import { useState, useEffect, useId } from 'react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { Trophy, Lock, Phone, Tag, AlertTriangle, CheckCircle } from 'lucide-react';
 import { AGENT_TRACKING } from '@/lib/agentMappings';
 import './EnquiryForm.css';
 
@@ -20,33 +21,33 @@ import './EnquiryForm.css';
 const SERVICES = [
   { value: '', label: '- Select a service / concern -', disabled: true },
   // Hair
-  { value: 'Hair Transplant (FUE)', label: '💇‍♂️  Hair Transplant (FUE)' },
-  { value: 'PRP Hair Therapy', label: '🌸  PRP Hair Therapy' },
-  { value: 'Hair Loss / Alopecia', label: '💧  Hair Loss / Alopecia' },
-  { value: 'Receding Hairline', label: '↩️   Receding Hairline' },
-  { value: 'Crown Thinning', label: '🌀  Crown Thinning' },
-  { value: 'Baldness Treatment', label: '✦  Baldness Treatment' },
+  { value: 'Hair Transplant (FUE)', label: 'Hair Transplant (FUE)' },
+  { value: 'PRP Hair Therapy', label: 'PRP Hair Therapy' },
+  { value: 'Hair Loss / Alopecia', label: 'Hair Loss / Alopecia' },
+  { value: 'Receding Hairline', label: 'Receding Hairline' },
+  { value: 'Crown Thinning', label: 'Crown Thinning' },
+  { value: 'Baldness Treatment', label: 'Baldness Treatment' },
   // Skin
-  { value: 'HydraFacial Therapy', label: '💎  HydraFacial Therapy' },
-  { value: 'Medical Chemical Peel', label: '✨  Medical Chemical Peel' },
-  { value: 'OxyGeneo Super Facial', label: '🧴  OxyGeneo Super Facial' },
+  { value: 'HydraFacial Therapy', label: 'HydraFacial Therapy' },
+  { value: 'Medical Chemical Peel', label: 'Medical Chemical Peel' },
+  { value: 'OxyGeneo Super Facial', label: 'OxyGeneo Super Facial' },
   // Anti-Aging
-  { value: 'Botox Anti-Aging', label: '🌟  Botox Anti-Aging' },
-  { value: 'Dermal Fillers', label: '💫  Dermal Fillers' },
-  { value: 'Collagen Microneedling', label: '🔬  Collagen Microneedling' },
-  { value: 'HIFU Non-Surgical Facelift', label: '👑  HIFU Non-Surgical Facelift' },
-  { value: 'Facelift & Neck Tightening', label: '👑  Facelift & Neck Tightening' },
+  { value: 'Botox Anti-Aging', label: 'Botox Anti-Aging' },
+  { value: 'Dermal Fillers', label: 'Dermal Fillers' },
+  { value: 'Collagen Microneedling', label: 'Collagen Microneedling' },
+  { value: 'HIFU Non-Surgical Facelift', label: 'HIFU Non-Surgical Facelift' },
+  { value: 'Facelift & Neck Tightening', label: 'Facelift & Neck Tightening' },
   // Lasers
-  { value: 'Laser Hair Removal', label: '🎯  Laser Hair Removal' },
-  { value: 'Pigmentation / Melasma Laser', label: '💆‍♀️  Pigmentation / Melasma Laser' },
-  { value: 'Wart & Mole Removal', label: '⚡  Wart & Mole Removal' },
-  { value: 'Scar Revision', label: '👑  Scar Revision' },
+  { value: 'Laser Hair Removal', label: 'Laser Hair Removal' },
+  { value: 'Pigmentation / Melasma Laser', label: 'Pigmentation / Melasma Laser' },
+  { value: 'Wart & Mole Removal', label: 'Wart & Mole Removal' },
+  { value: 'Scar Revision', label: 'Scar Revision' },
   // Wellness
-  { value: 'Glutathione IV Drip', label: '💉  Glutathione IV Drip' },
-  { value: 'Double Chin Mesolipolysis', label: '✦  Double Chin Mesolipolysis' },
+  { value: 'Glutathione IV Drip', label: 'Glutathione IV Drip' },
+  { value: 'Double Chin Mesolipolysis', label: 'Double Chin Mesolipolysis' },
   // Other
-  { value: 'General Skin Consultation', label: '🩺  General Consultation' },
-  { value: 'Not Sure - Need Advice', label: '❓  Not Sure - Need Advice' },
+  { value: 'General Skin Consultation', label: 'General Consultation' },
+  { value: 'Not Sure - Need Advice', label: 'Not Sure - Need Advice' },
 ];
 
 /* ─── URL slug → dropdown value map ────────────────────────────── */
@@ -211,7 +212,7 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
     return (
       <div className="ef-card">
         <div className="ef-success">
-          <div className="ef-success-icon">✓</div>
+          <div className="ef-success-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><CheckCircle size={32} /></div>
           <h3>Thank you!</h3>
           <p>Our team will contact you shortly.</p>
           <a href="https://wa.me/919286577083?text=Hi!%20I%20just%20submitted%20an%20enquiry%20on%20your%20website."
@@ -234,15 +235,15 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
       </header>
 
       <div className="ef-trust">
-        <span>🏆 Expert Doctors</span>
-        <span>🔒 Confidential</span>
-        <span>📞 We Call You</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Trophy size={16} /> Expert Doctors</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Lock size={16} /> Confidential</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Phone size={16} /> We Call You</span>
       </div>
 
       <div className="ef-body">
         {formErr && (
-          <div className="ef-alert ef-alert-error" role="alert">
-            <span>⚠</span><span>{formErr}</span>
+          <div className="ef-alert ef-alert-error" role="alert" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <span><AlertTriangle size={16} /></span><span>{formErr}</span>
           </div>
         )}
 
@@ -252,14 +253,14 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
           <div className="ef-group">
             <label htmlFor={`${uid}-name`} className="ef-label">Full Name *</label>
             <input type="text" placeholder="e.g. Rahul Sharma" autoComplete="name" required {...ip('name')} />
-            {errors.name && <span className="ef-field-err">⚠ {errors.name}</span>}
+            {errors.name && <span className="ef-field-err" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><AlertTriangle size={12} /> {errors.name}</span>}
           </div>
 
           {/* Mobile Number */}
           <div className="ef-group">
             <label htmlFor={`${uid}-phone`} className="ef-label">Mobile Number *</label>
             <input type="tel" placeholder="+91 98765 43210" autoComplete="tel" inputMode="tel" required {...ip('phone')} />
-            {errors.phone && <span className="ef-field-err">⚠ {errors.phone}</span>}
+            {errors.phone && <span className="ef-field-err" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><AlertTriangle size={12} /> {errors.phone}</span>}
           </div>
 
 
@@ -306,7 +307,7 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
                 className="ef-input"
                 style={defaultCoupon ? { background: '#f5f5f5', color: '#666', cursor: 'not-allowed' } : {}}
               />
-              <span className="ef-coupon-icon">🏷️</span>
+              <span className="ef-coupon-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Tag size={16} /></span>
             </div>
           </div>
 
@@ -336,8 +337,8 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
           </button>
         </form>
 
-        <p className="ef-privacy">
-          🔒 Your details are kept confidential and used only to contact you
+        <p className="ef-privacy" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <Lock size={14} style={{ flexShrink: 0 }} /> Your details are kept confidential and used only to contact you
           regarding your consultation. We never share your information.
         </p>
       </div>
