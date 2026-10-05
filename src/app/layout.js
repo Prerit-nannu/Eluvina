@@ -6,7 +6,6 @@ import { AuthProvider } from '@/context/AuthContext';
 import { CartProvider } from '@/context/CartContext';
 import { Suspense } from 'react';
 import AffiliateTracker from '@/components/AffiliateTracker';
-import Script from 'next/script';
 export const metadata = {
   metadataBase: new URL('https://aesthetics.eluvina.com'),
   alternates: {
@@ -98,20 +97,23 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {/* Google tag (gtag.js) */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-1JP5KE6E49" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JP5KE6E49"></script>
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
 
-            // Tracks Google Analytics Traffic
-            gtag('config', 'G-1JP5KE6E49');
+              // Tracks Google Analytics Traffic
+              gtag('config', 'G-1JP5KE6E49');
 
-            // Tracks Google Ads Conversions / Remarketing
-            gtag('config', 'AW-18484537594');
-          `}
-        </Script>
+              // Tracks Google Ads Conversions / Remarketing
+              gtag('config', 'AW-18484537594');
+            `,
+          }}
+        />
       </head>
       <body>
         <Suspense fallback={null}>
