@@ -162,7 +162,7 @@ a {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 24px 0;
+    padding: 10px 0;
     background: rgba(255, 255, 255, 0.911);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -171,7 +171,7 @@ a {
 }
 
 .navbar.scrolled {
-    padding: 12px 0;
+    padding: 6px 0;
     background: rgba(255, 255, 255, 0.96);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid transparent;
@@ -280,7 +280,7 @@ a {
     }
 
     .logo-text {
-        font-size: 1.2rem;
+        display: none;
     }
 
     .mobile-toggle {

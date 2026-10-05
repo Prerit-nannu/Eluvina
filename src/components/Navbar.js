@@ -32,7 +32,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link href="/" className="logo" onClick={() => setMobileOpen(false)}>
-          <img src="/images/logo.png" alt="Eluvina Logo" className="logo-img" style={{ height: '36px', width: 'auto' }} />
+          <img src="/images/logo.avif" alt="Eluvina Logo" className="logo-img" style={{ height: '64px', width: 'auto' }} />
           <span className="logo-text">Eluvina Aesthetics</span>
         </Link>
 

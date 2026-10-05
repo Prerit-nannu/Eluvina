@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
     'medicalSpecialty': ['Hair Transplant', 'Cosmetic Surgery', 'Hair PRP', 'Laser Hair Removal', 'PRP', 'Microneedling'],
     'openingHours': 'Mo-Sa 10:00-19:00',
     'priceRange': '₹₹₹',
-    'image': 'https://aesthetics.eluvina.com/images/logo.png',
+    'image': 'https://aesthetics.eluvina.com/images/logo.avif',
   };
 
   return (
