@@ -3,8 +3,12 @@
    ============================================================ */
 
 /* Two-column layout */
+.eq-page-header {
+  margin-bottom: 0;
+}
+
 .eq-section {
-  padding-top: 48px;
+  padding-top: 24px;
   padding-bottom: 80px;
 }
 

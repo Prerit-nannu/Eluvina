@@ -50,15 +50,12 @@ function EnquiryContent() {
     if (ref) setCoupon(ref.toUpperCase());
   }, [searchParams, pathname]);
 
-  /* Static page heading */
-  const pageTitle = 'Free Expert Consultation';
-
   return (
     <>
       {/* ── Page header ─────────────────────────────────── */}
       <div className="page-header eq-page-header">
         <span className="section-tag">✦ No Obligation · 100% Free</span>
-        <h1>{pageTitle}</h1>
+        <h1>Free Expert <span className="highlight">Consultation</span></h1>
         <p style={{ maxWidth: '580px', margin: '0 auto' }}>
           Share your details and one of our certified specialists will call you
           shortly to discuss your treatment options.

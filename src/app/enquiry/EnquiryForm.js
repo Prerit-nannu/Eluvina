@@ -337,9 +337,8 @@ export default function EnquiryForm({ defaultService = '', defaultCoupon = '' })
           </button>
         </form>
 
-        <p className="ef-privacy" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <Lock size={14} style={{ flexShrink: 0 }} /> Your details are kept confidential and used only to contact you
-          regarding your consultation. We never share your information.
+        <p className="ef-privacy" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+          <Lock size={14} style={{ flexShrink: 0 }} /> Your details are kept 100% confidential and only used for your consultation.
         </p>
       </div>
     </div>

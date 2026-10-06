@@ -27,7 +27,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="page-header">
+      <div className="page-header" style={{ marginBottom: 0 }}>
         <span className="section-tag">Get In Touch</span>
         <h1>Contact Us & <span className="highlight">Book Now</span></h1>
         <p style={{ maxWidth: '650px', margin: '0 auto' }}>
@@ -35,7 +35,7 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <section className="page-section">
+      <section className="page-section" style={{ paddingTop: '24px' }}>
         <div className="contact-container">
           {/* Booking Form */}
           <div className="contact-card" style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
