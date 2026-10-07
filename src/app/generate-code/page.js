@@ -7,6 +7,7 @@ import './GenerateCode.css';
 export default function GenerateCodePage() {
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
+  const [email, setEmail] = useState('');
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +21,7 @@ export default function GenerateCodePage() {
     setCopied(false);
 
     try {
-      const res = await generateReferralCodeAction(name, dob);
+      const res = await generateReferralCodeAction(name, dob, email);
       if (res.success) {
         setResult(res.code);
       } else {
@@ -47,7 +48,7 @@ export default function GenerateCodePage() {
       <div className="referral-card">
         <div className="referral-header">
           <h1>Referral Code Generator</h1>
-          <p>Create unique tracking links for clients or agents.</p>
+          <p>Generate unique codes for referral partners.</p>
         </div>
 
         <form className="referral-form" onSubmit={handleSubmit}>
@@ -61,6 +62,18 @@ export default function GenerateCodePage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="personEmail">Email Address (Optional)</label>
+            <input
+              id="personEmail"
+              type="email"
+              className="form-input"
+              placeholder="e.g., sarah@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 

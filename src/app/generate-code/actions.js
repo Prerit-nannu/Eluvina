@@ -1,7 +1,8 @@
 'use server'
 import crypto from 'crypto';
+import clientPromise from '@/lib/mongodb';
 
-export async function generateReferralCodeAction(name, dob) {
+export async function generateReferralCodeAction(name, dob, email) {
   try {
     if (!name || !dob) {
       return { success: false, error: 'Name and Date of Birth are required.' };
@@ -23,8 +24,34 @@ export async function generateReferralCodeAction(name, dob) {
 
     // 4. Extract first 6 chars
     const code = hash.substring(0, 6).toUpperCase();
+
+    // 5. Save or update in MongoDB
+    const client = await clientPromise;
+    const db = client.db('eluvina_aesthetics');
+    const collection = db.collection('referral_partners');
+
+    const existingCode = await collection.findOne({ code });
+
+    if (existingCode) {
+      // Update name and email if code exists
+      await collection.updateOne(
+        { code },
+        { $set: { name, email: email || '' } }
+      );
+    } else {
+      // Insert new record
+      await collection.insertOne({
+        code,
+        name,
+        dob,
+        email: email || '',
+        createdAt: new Date()
+      });
+    }
+
     return { success: true, code };
   } catch (error) {
+    console.error('Error in generateReferralCodeAction:', error);
     return { success: false, error: 'An unexpected error occurred.' };
   }
 }
