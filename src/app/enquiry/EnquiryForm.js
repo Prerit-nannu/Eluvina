@@ -32,7 +32,7 @@ const SERVICES = [
   { value: 'Medical Chemical Peel', label: 'Medical Chemical Peel' },
   { value: 'OxyGeneo Super Facial', label: 'OxyGeneo Super Facial' },
   // Anti-Aging
-  { value: 'Botox Anti-Aging', label: 'Botox Anti-Aging' },
+  { value: 'Anti-Ageing Treatment', label: 'Anti-Ageing Treatment' },
   { value: 'Dermal Fillers', label: 'Dermal Fillers' },
   { value: 'Collagen Microneedling', label: 'Collagen Microneedling' },
   { value: 'HIFU Non-Surgical Facelift', label: 'HIFU Non-Surgical Facelift' },
@@ -60,7 +60,7 @@ const SLUG_MAP = {
   'baldness': 'Baldness Treatment',
   'hydrafacial': 'HydraFacial Therapy',
   'chemical-peel': 'Medical Chemical Peel',
-  'botox': 'Botox Anti-Aging',
+  'anti-ageing': 'Anti-Ageing Treatment',
   'fillers': 'Dermal Fillers',
   'dermal-fillers': 'Dermal Fillers',
   'microneedling': 'Collagen Microneedling',

@@ -8,7 +8,7 @@
  *
  * URL-driven dropdown pre-selection:
  *   /enquiry?service=hair-transplant  → "Hair Transplant (FUE)"
- *   /enquiry?service=botox            → "Botox Anti-Aging"
+ *   /enquiry?service=anti-ageing      → "Anti-Ageing Treatment"
  *   /enquiry?service=hydrafacial      → "HydraFacial Therapy"
  *   /enquiry?ref=GOOGLE20             → coupon pre-filled
  *

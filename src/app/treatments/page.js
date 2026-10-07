@@ -14,7 +14,7 @@ export default function TreatmentsPage() {
     { id: 'hair', label: 'Hair & Scalp' },
     { id: 'facials', label: 'Facials & Peels' },
     { id: 'anti-aging', label: 'Anti-Aging & Scars' },
-    { id: 'injectables', label: 'Botox, Fillers & PRP' },
+    { id: 'injectables', label: 'Anti-Ageing, Fillers & PRP' },
     { id: 'lasers', label: 'Laser & Pigmentation' },
     { id: 'lifting', label: 'Non-Surgical Lifting' },
   ];
@@ -42,7 +42,7 @@ export default function TreatmentsPage() {
           <Search size={20} style={{ position: 'absolute', left: '18px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(0,0,0,0.4)' }} />
           <input
             type="text"
-            placeholder="Search treatment (e.g. Hair Transplant, HydraFacial, Botox)..."
+            placeholder="Search treatment (e.g. Hair Transplant, HydraFacial, Anti-Ageing)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{

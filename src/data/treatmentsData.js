@@ -24,7 +24,7 @@ export const treatmentsData = [
     image: '/images/treatments/hydrafacial.png',
   },
   {
-    id: 'botox',
+    id: 'anti-ageing',
     title: 'Rejuvenating Facial Therapies',
     category: 'anti-aging',
     description: 'FDA-cleared aesthetic treatments designed to reduce fine lines and wrinkles. Smooth forehead lines, crow\'s feet, and frown lines effectively.',
@@ -33,7 +33,7 @@ export const treatmentsData = [
     badge: 'Premium',
     icon: '🌟',
     isPremium: true,
-    image: '/images/treatments/botox.png',
+    image: '/images/treatments/anti-ageing.png',
   },
   {
     id: 'chemical-peel',
@@ -177,7 +177,7 @@ export const treatmentsData = [
     badge: 'Signature',
     icon: '👑',
     isPremium: true,
-    image: '/images/treatments/botox.png',
+    image: '/images/treatments/anti-ageing.png',
   },
   {
     id: 'iv-drip',
