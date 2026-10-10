@@ -48,7 +48,7 @@ export default function GenerateCodePage() {
       <div className="referral-card">
         <div className="referral-header">
           <h1>Referral Code Generator</h1>
-          <p>Generate unique codes for referral partners.</p>
+          <p>Create your personal referral code and start sharing.</p>
         </div>
 
         <form className="referral-form" onSubmit={handleSubmit}>
@@ -108,6 +108,24 @@ export default function GenerateCodePage() {
             </button>
           </div>
         )}
+
+        <div className="how-it-works">
+          <h2>How it works</h2>
+          <ul className="steps-list">
+            <li className="step-item">
+              <span className="step-number">1</span>
+              <span className="step-text"><strong>Generate Code:</strong> Create a unique referral link using the form above.</span>
+            </li>
+            <li className="step-item">
+              <span className="step-number">2</span>
+              <span className="step-text"><strong>Share:</strong> Share your unique code to your friends or send them the generated link to book a consultation directly.</span>
+            </li>
+            <li className="step-item">
+              <span className="step-number">3</span>
+              <span className="step-text"><strong>Earn:</strong> Get up to 10% back on qualifying procedures once your friend completes their treatment.</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
