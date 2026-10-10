@@ -2,22 +2,21 @@
 import crypto from 'crypto';
 import clientPromise from '@/lib/mongodb';
 
-export async function generateReferralCodeAction(name, dob, email) {
+export async function generateReferralCodeAction(name, phone, email, location) {
   try {
-    if (!name || !dob) {
-      return { success: false, error: 'Name and Date of Birth are required.' };
+    if (!name || !phone) {
+      return { success: false, error: 'Name and Phone Number are required.' };
     }
 
     // 1. Clean the inputs
-    const rawFirstName = name.split(' ')[0].trim().toLowerCase().replace(/[^a-z]/g, '');
-    const rawDob = dob.trim().replace(/[^0-9]/g, ''); 
+    const rawPhone = phone.trim().replace(/[^0-9]/g, ''); 
 
-    if (!rawFirstName || !rawDob) {
-      return { success: false, error: 'Invalid name or DOB format.' };
+    if (!rawPhone || rawPhone.length < 10) {
+      return { success: false, error: 'Please enter a valid 10-digit mobile number.' };
     }
 
     // 2. Combine into a deterministic string
-    const deterministicString = `${rawFirstName}${rawDob}`;
+    const deterministicString = `${rawPhone}`;
 
     // 3. Hash using SHA-256
     const hash = crypto.createHash('sha256').update(deterministicString).digest('hex');
@@ -33,17 +32,18 @@ export async function generateReferralCodeAction(name, dob, email) {
     const existingCode = await collection.findOne({ code });
 
     if (existingCode) {
-      // Update name and email if code exists
+      // Update details if code exists
       await collection.updateOne(
         { code },
-        { $set: { name, email: email || '' } }
+        { $set: { name, email: email || '', location: location || '' } }
       );
     } else {
       // Insert new record
       await collection.insertOne({
         code,
         name,
-        dob,
+        phone,
+        location,
         email: email || '',
         createdAt: new Date()
       });

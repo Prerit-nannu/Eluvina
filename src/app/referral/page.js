@@ -6,8 +6,9 @@ import './GenerateCode.css';
 
 export default function GenerateCodePage() {
   const [name, setName] = useState('');
-  const [dob, setDob] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [location, setLocation] = useState('');
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -21,7 +22,7 @@ export default function GenerateCodePage() {
     setCopied(false);
 
     try {
-      const res = await generateReferralCodeAction(name, dob, email);
+      const res = await generateReferralCodeAction(name, phone, email, location);
       if (res.success) {
         setResult(res.code);
       } else {
@@ -53,12 +54,12 @@ export default function GenerateCodePage() {
 
         <form className="referral-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="personName">First Name (or Full Name)</label>
+            <label htmlFor="personName">Full Name <span style={{ color: 'red' }}>*</span></label>
             <input
               id="personName"
               type="text"
               className="form-input"
-              placeholder="e.g., Sarah Jenkins"
+              placeholder="e.g., Priya Sharma"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -66,26 +67,41 @@ export default function GenerateCodePage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="personEmail">Email Address (Optional)</label>
+            <label htmlFor="personPhone">UPI Linked Mobile Number <span style={{ color: 'red' }}>*</span></label>
+            <input
+              id="personPhone"
+              type="tel"
+              className="form-input"
+              placeholder="e.g., 9876543210"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              pattern="[0-9]{10}"
+              title="Please enter a valid 10-digit mobile number"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="personEmail">Email Address</label>
             <input
               id="personEmail"
               type="email"
               className="form-input"
-              placeholder="e.g., sarah@example.com"
+              placeholder="e.g., priya@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="personDob">Date of Birth</label>
+            <label htmlFor="personLocation">Location / City</label>
             <input
-              id="personDob"
-              type="date"
+              id="personLocation"
+              type="text"
               className="form-input"
-              value={dob}
-              onChange={(e) => setDob(e.target.value)}
-              required
+              placeholder="e.g., Mumbai"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
             />
           </div>
 
@@ -122,7 +138,7 @@ export default function GenerateCodePage() {
             </li>
             <li className="step-item">
               <span className="step-number">3</span>
-              <span className="step-text"><strong>Earn:</strong> Get up to 10% back on qualifying procedures once your friend completes their treatment.</span>
+              <span className="step-text"><strong>Earn:</strong> Get up to 10% back on qualifying procedures once your friend completes their treatment. Your cashback will be transferred directly to your UPI linked mobile number.</span>
             </li>
           </ul>
         </div>
