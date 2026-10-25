@@ -180,6 +180,126 @@
   box-shadow: 0 6px 20px rgba(139, 107, 74, 0.35);
 }
 
+/* ---- Category Filter Pills ---- */
+.pp-pills-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 18px auto 0;
+  padding: 0 40px;
+}
+
+.pp-pill {
+  padding: 8px 18px;
+  background: #f7f7f7;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.pp-pill:hover {
+  background: #eee;
+  color: #1a1a1a;
+  border-color: #d1d5db;
+}
+
+.pp-pill.active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Direct Products Section ---- */
+.pp-products-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 40px 90px;
+}
+
+.pp-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 34px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pp-products-header h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.pp-products-header p {
+  font-size: 0.95rem;
+  color: #777;
+  margin: 0;
+}
+
+.pp-products-count {
+  background: #f5eedc;
+  color: #b8860b;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---- Empty State ---- */
+.pp-empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fafafa;
+  border-radius: 16px;
+  border: 1px dashed #ddd;
+  margin: 20px 0;
+}
+
+.pp-empty-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.pp-empty-sub {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.pp-empty-reset-btn {
+  padding: 10px 24px;
+  background: var(--primary, #b38b4d);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pp-empty-reset-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
 /* ---- Categories Section ---- */
 .pp-categories-section {
   max-width: 1400px;

@@ -1,83 +1,78 @@
 'use client';
 
-import { useState } from 'react';
-import ProductListing from './ProductListing';
-import { productsData, getSubCategories, getProductsBySubCategory } from '@/data/productsData';
+import { useState, useMemo } from 'react';
+import { productsData, getSubCategories } from '@/data/productsData';
 import { Search } from 'lucide-react';
 import './ProductsPage.css';
-
-// Category card images map
-const categoryImages = {
-  // Skin
-  'Face Wash': '/images/products/cat_face_wash.png',
-  'Moisturizer': '/images/products/cat_moisturizer.png',
-  'Sunscreen': '/images/products/cat_sunscreen.png',
-  'Serum': '/images/products/cat_serum.png',
-  'Cream': '/images/products/cat_cream.png',
-  'Under Eye': '/images/products/cat_under_eye.png',
-  // Hair
-  'Medicated Shampoo': '/images/products/cat_shampoo.avif',
-  'Hair Oil': '/images/products/cat_hair_oil.png',
-  'Hair Serum': '/images/products/cat_hair_serum.png',
-  'Minoxidil': '/images/products/cat_minoxidil.avif',
-};
+import './ProductListing.css';
 
 export default function ProductsPageContent() {
   const [activeTab, setActiveTab] = useState('All');
+  const [activeSubCategory, setActiveSubCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const tabs = ['All', 'Hair', 'Skin'];
 
-  // Build category list based on active tab
-  const subCategories = getSubCategories(activeTab);
+  // Available sub-categories for active tab
+  const availableSubCategories = useMemo(() => {
+    return ['All', ...getSubCategories(activeTab)];
+  }, [activeTab]);
 
-  // Filter by search
-  const filteredCategories = subCategories.filter(cat =>
-    cat.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  // When a category card is clicked
-  const handleCategoryClick = (subCat) => {
-    setSelectedCategory(subCat);
-    window.scrollTo({ top: 300, behavior: 'smooth' });
-  };
-
-  const handleClose = () => {
-    setSelectedCategory(null);
-  };
+  // Filter products based on active tab, subCategory, and search query
+  const filteredProducts = useMemo(() => {
+    return productsData.filter((product) => {
+      // Tab filter (Hair / Skin / All)
+      if (activeTab !== 'All' && product.category !== activeTab) {
+        return false;
+      }
+      // Sub-category filter
+      if (activeSubCategory !== 'All' && product.subCategory !== activeSubCategory) {
+        return false;
+      }
+      // Search query filter (matches name, subCategory, description, or benefits)
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const matchesName = product.name?.toLowerCase().includes(q);
+        const matchesSub = product.subCategory?.toLowerCase().includes(q);
+        const matchesDesc = product.description?.toLowerCase().includes(q);
+        const matchesBenefit = product.benefits?.some(b => b.toLowerCase().includes(q));
+        if (!matchesName && !matchesSub && !matchesDesc && !matchesBenefit) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }, [activeTab, activeSubCategory, searchQuery]);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
-    setSelectedCategory(null);
-    setSearchQuery('');
+    setActiveSubCategory('All');
   };
+
+  const discount = (mrp, price) => Math.round(((mrp - price) / mrp) * 100);
 
   return (
     <div className="pp-wrapper">
       {/* Search Bar */}
       <div className="pp-search-bar-row">
         <div className="pp-search-container">
-          <span className="pp-search-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Search size={20} color="#999" /></span>
+          <span className="pp-search-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Search size={20} color="#999" />
+          </span>
           <input
             type="text"
             className="pp-search-input"
-            placeholder="Search products or categories..."
+            placeholder="Search products, ingredients, or skin concerns..."
             value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setSelectedCategory(null);
-            }}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           {searchQuery && (
-            <button className="pp-search-clear" onClick={() => setSearchQuery('')}>✕</button>
+            <button className="pp-search-clear" onClick={() => setSearchQuery('')} aria-label="Clear search">✕</button>
           )}
         </div>
       </div>
 
-
-
-      {/* Category Tabs: All | Hair | Skin */}
+      {/* Main Department Tabs: All | Hair | Skin */}
       <div className="pp-tabs-row">
         {tabs.map(tab => (
           <button
@@ -85,62 +80,104 @@ export default function ProductsPageContent() {
             className={`pp-tab ${activeTab === tab ? 'active' : ''}`}
             onClick={() => handleTabChange(tab)}
           >
-            {tab}
+            {tab === 'All' ? 'All Products' : `${tab} Care`}
           </button>
         ))}
       </div>
 
-      {/* If a sub-category is selected, show products. Else show category grid. */}
-      {selectedCategory ? (
-        <ProductListing
-          subCategory={selectedCategory}
-          products={getProductsBySubCategory(selectedCategory)}
-          onClose={handleClose}
-        />
-      ) : (
-        <section className="pp-categories-section">
-          <div className="pp-categories-header">
-            <h2>
-              Explore Our{' '}
-              <span className="pp-highlight">
-                {activeTab === 'All' ? 'ALL' : activeTab.toUpperCase()}
-              </span>{' '}
-              Categories
-            </h2>
-            <p>Browse through our wide range of categories to find what you love.</p>
-          </div>
+      {/* Quick Category Filter Pills */}
+      <div className="pp-pills-row">
+        {availableSubCategories.map(subCat => (
+          <button
+            key={subCat}
+            className={`pp-pill ${activeSubCategory === subCat ? 'active' : ''}`}
+            onClick={() => setActiveSubCategory(subCat)}
+          >
+            {subCat}
+          </button>
+        ))}
+      </div>
 
-          {filteredCategories.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '60px 0', color: '#999' }}>
-              <p style={{ fontSize: '1.2rem' }}>No categories found for "{searchQuery}"</p>
-            </div>
-          ) : (
-            <div className="pp-categories-grid">
-              {filteredCategories.map((cat) => (
+      {/* Direct Products Grid Section */}
+      <section className="pp-products-section">
+        <div className="pp-products-header">
+          <div>
+            <h2>
+              {activeSubCategory !== 'All' ? activeSubCategory : (activeTab === 'All' ? 'All Formulations' : `${activeTab} Formulations`)}
+            </h2>
+            <p>Dermatologist-formulated and clinic-grade skincare & haircare solutions.</p>
+          </div>
+          <span className="pp-products-count">{filteredProducts.length} Products</span>
+        </div>
+
+        {filteredProducts.length === 0 ? (
+          <div className="pp-empty-state">
+            <p className="pp-empty-title">No products match your search</p>
+            <p className="pp-empty-sub">Try searching for something else or reset your filters.</p>
+            <button
+              className="pp-empty-reset-btn"
+              onClick={() => { setActiveTab('All'); setActiveSubCategory('All'); setSearchQuery(''); }}
+            >
+              Reset All Filters
+            </button>
+          </div>
+        ) : (
+          <div className="pl-grid">
+            {filteredProducts.map((product) => {
+              return (
                 <div
-                  className="pp-cat-card"
-                  key={cat}
-                  onClick={() => handleCategoryClick(cat)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && handleCategoryClick(cat)}
-                  aria-label={`Browse ${cat} products`}
+                  className="pl-card"
+                  key={product.id}
                 >
-                  <img
-                    src={categoryImages[cat] || '/images/products/cat_others.png'}
-                    alt={cat}
-                    className="pp-cat-img"
-                  />
-                  <div className="pp-cat-label">{cat}</div>
-                  <div className="pp-cat-count">
-                    {getProductsBySubCategory(cat).length} Products →
+                  {/* Discount badge */}
+                  {product.mrp > product.price && (
+                    <div className="pl-badge">
+                      {discount(product.mrp, product.price)}% OFF
+                    </div>
+                  )}
+
+                  {/* Image */}
+                  <div className="pl-img-wrapper">
+                    <img src={product.image} alt={product.name} className="pl-img" />
+                  </div>
+
+                  {/* Info */}
+                  <div className="pl-info">
+                    <div className="pl-brand-row">
+                      <span className="pl-brand-tag">{product.subCategory}</span>
+                      <span className="pl-clinic-tag">Buy from Clinic</span>
+                    </div>
+
+                    <h3 className="pl-product-name">{product.name}</h3>
+                    <p className="pl-description">{product.description}</p>
+
+                    {/* Benefits */}
+                    <ul className="pl-benefits">
+                      {product.benefits?.map((b, i) => (
+                        <li key={i}>
+                          <span className="pl-check">✓</span> {b}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Pricing */}
+                    <div className="pl-pricing">
+                      <span className="pl-price">₹{product.price.toLocaleString('en-IN')}</span>
+                      {product.mrp > product.price && (
+                        <>
+                          <span className="pl-mrp">MRP ₹{product.mrp.toLocaleString('en-IN')}</span>
+                          <span className="pl-saved">Save ₹{(product.mrp - product.price).toLocaleString('en-IN')}</span>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          )}
-        </section>
-      )}
+              );
+            })}
+          </div>
+        )}
+      </section>
     </div>
   );
 }
+
