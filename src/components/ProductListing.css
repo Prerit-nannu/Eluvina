@@ -157,6 +157,33 @@
   transform: scale(1.05);
 }
 
+.pl-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #faf7f2 0%, #f4eee3 100%);
+  border-radius: 12px;
+  border: 1px dashed #d8c3a5;
+  color: #b38b4d;
+}
+
+.pl-placeholder-icon {
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.pl-placeholder-cat {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #8b6b4a;
+}
+
 /* Card Body / Info Section - Elegant light warm brown/cream tone for clinical warmth */
 .pl-info {
   padding: 22px 22px 20px;
@@ -194,8 +221,8 @@
 }
 
 .pl-product-name {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.15rem;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1.35;

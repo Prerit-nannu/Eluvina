@@ -17,7 +17,7 @@
 export const productsData = [
 
   // ─────────────────────────────────────────────
-  //  HAIR — Shampoo
+  //  HAIR — Medicated Shampoo & Hair Care
   // ─────────────────────────────────────────────
   {
     id: "h-sh-001",
@@ -26,15 +26,32 @@ export const productsData = [
     name: "Anatrix Hairfall Defense Shampoo",
     image: "/images/products/anatrix_hairfall_defense_shampoo.avif",
     mrp: 550,
-    price: 500,
-    description: "Anti Hairfall Hair Growth Supllement (120 ml)",
+    price: 495,
+    description: "Anti Hairfall Hair Growth Supplement (120 ml) for Hairfall & Follicular Hypoactivity.",
     benefits: [
       "Increases A:T ratio",
-      "Repairs hair shaft ",
+      "Repairs hair shaft",
       "Aids in hair growth",
-      "Smoothens hair texture "
+      "Smoothens hair texture"
     ]
   },
+  {
+    id: "h-sh-002",
+    category: "Hair",
+    subCategory: "Medicated Shampoo",
+    name: "Follidan Anti Dandruff Shampoo",
+    image: "/images/products/follidan_shampoo.avif",
+    mrp: 390,
+    price: 351,
+    description: "Anti-Dandruff Shampoo for All Hair Types (100 ml) with Climbazole & Piroctone Olamine.",
+    benefits: [
+      "Controls itching & scalp redness",
+      "Climbazole & Piroctone Olamine action",
+      "Clears & calms irritated scalp",
+      "Prevents dandruff recurrence"
+    ]
+  },
+
   // ─────────────────────────────────────────────
   //  HAIR — Hair Oil
   // ─────────────────────────────────────────────
@@ -45,7 +62,7 @@ export const productsData = [
     name: "Scalp Revival Hair Oil",
     image: "/images/products/cat_hair_oil.png",
     mrp: 899,
-    price: 699,
+    price: 809,
     description: "A powerful blend of Bhringraj, Rosemary, and Castor Oil that stimulates hair growth, nourishes the scalp, and improves blood circulation.",
     benefits: [
       "Promotes new hair growth",
@@ -59,35 +76,35 @@ export const productsData = [
   //  HAIR — Hair Serum
   // ─────────────────────────────────────────────
   {
-    id: "h-hs-002",
-    category: "Hair",
-    subCategory: "Hair Serum",
-    name: "Anable Hair Serum (AnaGain, Procapil & Redensyl)",
-    image: "/images/products/anable_hair_serum.avif",
-    mrp: 1299,
-    price: 1199,
-    description: "Advanced Hair Growth & Density Serum formulated with clinically proven AnaGain, Procapil, Redensyl, SpecPed SC Complex & Trifolium Pratense (50 ml).",
-    benefits: [
-      "Clinically active formula: AnaGain, Procapil & Redensyl",
-      "Stimulates dormant follicles & boosts hair density",
-      "Lengthens hair growth cycle & anchors hair roots",
-      "Reduces scalp inflammation & promotes cellular renewal"
-    ]
-  },
-  {
     id: "h-hs-001",
     category: "Hair",
     subCategory: "Hair Serum",
     name: "Anatrix Pro Hair Serum",
     image: "/images/products/anatrix_hair_pro_serum.avif",
-    mrp: 990,
-    price: 950,
-    description: "Multiple Pathway Stimulation for Hair Growth. (50 ml)",
+    mrp: 1350,
+    price: 1215,
+    description: "Multiple Pathway Stimulation for Hair Growth with Redensyl & Anagain (50 ml).",
     benefits: [
       "Increases anagen phase hair density",
-      "Aids in hair elongation ",
-      "Enhances stem cell activity",
-      "Prevents miniaturization of hair "
+      "Aids in hair elongation",
+      "Enhances follicular stem cell activity",
+      "Prevents miniaturization of hair roots"
+    ]
+  },
+  {
+    id: "h-hs-002",
+    category: "Hair",
+    subCategory: "Hair Serum",
+    name: "Anable Anti Hairfall and Hair Regrowth Serum",
+    image: "/images/products/anable_hair_serum.avif",
+    mrp: 1300,
+    price: 1170,
+    description: "Advanced Hair Growth & Density Serum formulated with 3% Redensyl, 3% Procapil, 2% Anagain, SpecPed SC Complex & Trifolium Pratense (50 ml).",
+    benefits: [
+      "Clinically active formula: AnaGain, Procapil & Redensyl",
+      "Stimulates dormant follicles & boosts hair density",
+      "Lengthens hair growth cycle & anchors hair roots",
+      "Reduces scalp inflammation & promotes cellular renewal"
     ]
   },
 
@@ -101,33 +118,101 @@ export const productsData = [
     name: "Minoxidil 5% Solution",
     image: "/images/products/cat_minoxidil.avif",
     mrp: 1199,
-    price: 899,
-    description: "FDA-approved Minoxidil 5% topical solution clinically proven to regrow hair and halt hereditary hair loss in men and women.",
+    price: 1079,
+    description: "Minoxidil 5% topical solution clinically proven to stimulate hair follicles, promote regrowth, and halt hereditary hair loss in men and women.",
     benefits: [
-      "FDA approved formula",
-      "Clinically proven hair regrowth",
+      "Clinically proven active formulation",
+      "Stimulates dormant hair follicles",
       "Visible results in 3-4 months",
-      "Easy dropper application"
+      "Easy targeted dropper application"
     ]
   },
 
   // ─────────────────────────────────────────────
-  //  SKIN — Face Wash
+  //  SKIN — Face Wash & Cleanser
   // ─────────────────────────────────────────────
   {
     id: "s-fw-001",
     category: "Skin",
     subCategory: "Face Wash",
-    name: "Gentle Hydrating Face Wash",
-    image: "/images/products/cat_face_wash.png",
-    mrp: 599,
-    price: 449,
-    description: "A creamy, soap-free face wash with Hyaluronic Acid and Ceramides that cleanses without stripping the skin's natural moisture barrier.",
+    name: "Vegetal Tea Tree Acne Prevention Gel Face Wash",
+    image: "",
+    mrp: 249,
+    price: 224,
+    description: "Soap-free, paraben-free gel face wash (100 ml) for oily, acne-prone skin with sebum control.",
     benefits: [
-      "Soap-free gentle formula",
-      "Locks in moisture",
-      "Suitable for sensitive skin",
-      "Dermatologist tested"
+      "Controls excess sebum & shine",
+      "Soap-free gentle purifying formula",
+      "Prevents acne lesions & breakouts",
+      "Paraben free and dermatologically tested"
+    ]
+  },
+  {
+    id: "s-fw-002",
+    category: "Skin",
+    subCategory: "Face Wash",
+    name: "Vegetal Sandal Whitening Gel Face Wash",
+    image: "",
+    mrp: 250,
+    price: 225,
+    description: "Whitening gel cleanser (100 ml) formulated for uneven skin tone, dull skin & tan removal.",
+    benefits: [
+      "Targets uneven skin tone & sun tan",
+      "Restores natural skin radiance",
+      "Gentle daily herbal brightening",
+      "Hypoallergenic & paraben free"
+    ]
+  },
+  {
+    id: "s-fw-003",
+    category: "Skin",
+    subCategory: "Face Wash",
+    name: "Dermshine Advanced Gentle Cleanser",
+    image: "/images/products/dermshine_cleanser.avif",
+    mrp: 650,
+    price: 585,
+    description: "Barrier Repair + Brightening Cleanser (100 ml) with Niacinamide, Alpha Arbutin & AHA Ceramide Complex.",
+    benefits: [
+      "AHA blend and ceramide complex",
+      "With Niacinamide & Alpha Arbutin",
+      "Supports skin barrier & tan removal",
+      "Suitable for normal to dry & sensitive skin"
+    ]
+  },
+  {
+    id: "s-fw-004",
+    category: "Skin",
+    subCategory: "Face Wash",
+    name: "Tea Tree Acne Face Wash & Vegetal Sandal Combo",
+    image: "",
+    mrp: 500,
+    price: 450,
+    description: "Dual cleansing care pack (100 ml + 100 ml) combining Tea Tree sebum control with Sandal skin brightening.",
+    benefits: [
+      "Complete acne prevention & tan removal combo",
+      "Deep cleansing without drying skin",
+      "Soap-free & paraben-free herbal formulations",
+      "Value combo pack"
+    ]
+  },
+
+  // ─────────────────────────────────────────────
+  //  SKIN — Soap & Body Care
+  // ─────────────────────────────────────────────
+  {
+    id: "s-sp-001",
+    category: "Skin",
+    subCategory: "Soap",
+    name: "Duvitin Moisturising Soap for Dry Skin",
+    image: "/images/products/duvitin_moisturising_soap.avif",
+    mrp: 408,
+    price: 367,
+    description: "Intense moisturising soap pack of 4 (300 g) formulated with Shea Butter & Vitamin E for dry, dehydrated skin.",
+    benefits: [
+      "Deeply nourishes & locks in moisture",
+      "Enriched with Shea Butter & Vitamin E",
+      "Enhances skin softness & elasticity",
+      "Pack of 4 convenient clinical bars"
     ]
   },
 
@@ -138,16 +223,16 @@ export const productsData = [
     id: "s-mo-001",
     category: "Skin",
     subCategory: "Moisturizer",
-    name: "Ultra-Light Day Moisturizer",
-    image: "/images/products/cat_moisturizer.png",
-    mrp: 899,
-    price: 699,
-    description: "A feather-light, non-comedogenic moisturizer with Niacinamide and Hyaluronic Acid that hydrates all day without greasiness.",
+    name: "Vegetal SoftLite™ Intense Daily Moisturiser",
+    image: "",
+    mrp: 310,
+    price: 279,
+    description: "Creamy intense daily lotion (90 ml) for dry, itchy skin with non-greasy brightening finish.",
     benefits: [
-      "Non-comedogenic formula",
-      "24-hour hydration",
-      "Brightens dull skin",
-      "SPF 15 added protection"
+      "Moisturises, restores & protects skin barrier",
+      "Non-comedogenic & hypoallergenic",
+      "Relieves dry, itchy skin instantly",
+      "Lightweight non-greasy absorption"
     ]
   },
 
@@ -158,16 +243,32 @@ export const productsData = [
     id: "s-ss-001",
     category: "Skin",
     subCategory: "Sunscreen",
-    name: "SPF 50+ Matte Sunscreen",
-    image: "/images/products/cat_sunscreen.png",
-    mrp: 799,
-    price: 599,
-    description: "Broad-spectrum SPF 50+ PA++++ sunscreen with a matte finish that shields against UVA/UVB rays and blue light without white cast.",
+    name: "UVICOZ Aqua Gel Sunscreen SPF 50+ PA++++",
+    image: "/images/products/uvicoz_sunscreen.avif",
+    mrp: 650,
+    price: 585,
+    description: "Oxybenzone-free aqua gel sunscreen (60 g) with microencapsulated technology and hydrating finish.",
     benefits: [
-      "SPF 50+ PA++++",
-      "Zero white cast",
-      "Matte finish for oily skin",
-      "Blue light protection"
+      "SPF 50+ PA++++ broad-spectrum protection",
+      "Oxybenzone free microencapsulated formula",
+      "Hydrating, non-greasy aqua gel texture",
+      "Zero white cast, dermatologist tested"
+    ]
+  },
+  {
+    id: "s-ss-002",
+    category: "Skin",
+    subCategory: "Sunscreen",
+    name: "SUNDAM Sunscreen SPF 50 PA++++",
+    image: "/images/products/sundam_sunscreen.avif",
+    mrp: 850,
+    price: 765,
+    description: "Broad Spectrum UVA/UVB protection (50 g) with Microbata Photoscience and Gen 2 UV filters.",
+    benefits: [
+      "Strong UVA/UVB + IR + HEV blue light defense",
+      "Powered by Gen Z intelligent UV filters",
+      "Microbiome-friendly protective shield",
+      "Lightweight matte finish without residue"
     ]
   },
 
@@ -178,16 +279,16 @@ export const productsData = [
     id: "s-sr-001",
     category: "Skin",
     subCategory: "Serum",
-    name: "Blabon Niacinamide Serum",
+    name: "Blabon 5% Niacinamide Serum",
     image: "/images/products/blabon_serum.avif",
     mrp: 950,
-    price: 900,
-    description: "5% | 10% Niacinamide Radiance Serum (30 ml)",
+    price: 855,
+    description: "5% Niacinamide Radiance Serum for Acne & Pigmentation (30 ml). Refines pores & evens skin tone.",
     benefits: [
-      "Fades acne marks",
+      "Fades acne marks & dark spots",
       "Reduces hyperpigmentation",
       "Regulates sebum production",
-      "Minimizes pore appearance"
+      "Minimizes enlarged pores"
     ]
   },
   {
@@ -197,13 +298,13 @@ export const productsData = [
     name: "Hebeda Hyaluronic Serum",
     image: "/images/products/hebeda_serum.avif",
     mrp: 770,
-    price: 750,
-    description: "Multi Molecular Weight Hyaluronic Acid (30 ml)",
+    price: 693,
+    description: "Multi Molecular Weight Hyaluronic Acid 2% (30 ml) for deep cellular hydration.",
     benefits: [
-      "Provides hydration ",
-      "Promotes elasticity ",
-      "Improves skin texture ",
-      "Anti-aging "
+      "Provides intense hydration",
+      "Promotes elasticity & firmness",
+      "Softens fine lines",
+      "Improves skin texture"
     ]
   },
   {
@@ -213,18 +314,18 @@ export const productsData = [
     name: "Ceutox Pro Cream Serum",
     image: "/images/products/ceutox_pro_cream_serum.avif",
     mrp: 1650,
-    price: 1600,
-    description: "0.3% Microencapsulated Retinol (30 ml)",
+    price: 1485,
+    description: "0.3% Microencapsulated Retinol (30 ml) for advanced cellular turnover.",
     benefits: [
-      "Reduces blemishes ",
-      "Improves skin texture ",
-      "Softens fine lines ",
-      "Depigments for even skin tone "
+      "Reduces blemishes & spots",
+      "Improves overall skin texture",
+      "Softens fine lines & wrinkles",
+      "Depigments for an even skin tone"
     ]
   },
 
   // ─────────────────────────────────────────────
-  //  SKIN — Cream
+  //  SKIN — Cream & Eye Care
   // ─────────────────────────────────────────────
   {
     id: "s-cr-001",
@@ -233,7 +334,7 @@ export const productsData = [
     name: "Kojic Acid Brightening Cream",
     image: "/images/products/cat_cream.png",
     mrp: 999,
-    price: 749,
+    price: 899,
     description: "Kojic Acid and Niacinamide combined to reduce hyperpigmentation, melasma, and uneven skin tone for a visibly brighter complexion.",
     benefits: [
       "Reduces melasma",
@@ -242,11 +343,6 @@ export const productsData = [
       "Gentle for daily use"
     ]
   },
-
-
-  // ─────────────────────────────────────────────
-  //  SKIN — Under Eye
-  // ─────────────────────────────────────────────
   {
     id: "s-ue-001",
     category: "Skin",
@@ -254,7 +350,7 @@ export const productsData = [
     name: "Peptide Eye Cream",
     image: "/images/products/cat_under_eye.png",
     mrp: 1199,
-    price: 899,
+    price: 1079,
     description: "Caffeine and Tri-Peptide enriched eye cream that reduces dark circles, puffiness, and fine lines around the delicate eye area.",
     benefits: [
       "Reduces dark circles",
@@ -282,3 +378,4 @@ export function getSubCategories(tab) {
 export function getProductsBySubCategory(subCategory) {
   return productsData.filter(p => p.subCategory === subCategory);
 }
+

@@ -138,7 +138,14 @@ export default function ProductsPageContent() {
 
                   {/* Image */}
                   <div className="pl-img-wrapper">
-                    <img src={product.image} alt={product.name} className="pl-img" />
+                    {product.image ? (
+                      <img src={product.image} alt={product.name} className="pl-img" />
+                    ) : (
+                      <div className="pl-img-placeholder">
+                        <span className="pl-placeholder-icon">✦</span>
+                        <span className="pl-placeholder-cat">{product.subCategory}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Info */}
